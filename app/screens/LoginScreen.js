@@ -38,16 +38,25 @@ export default class LoginScreen extends Component {
             <TouchableOpacity>
               <Text style={styles.ForgotPasswortext}>Forgot Password</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.loginButton}>
+            <TouchableOpacity style={styles.loginButton} activeOpacity={0.8}>
                 <Text style={styles.loginButtonText}>Log in</Text>
             </TouchableOpacity>
 
             <View style={{marginTop:"5%"}}>
               <Text style={{left:80}}>Don't have an account ? </Text>
-               <TouchableOpacity style={styles.signUpText}>
+               <TouchableOpacity style={styles.signUpText} activeOpacity={0.7}>
                  <Text style={{color:'#3067F1'}}>Sign Up</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or login with</Text>
+
+               <TouchableOpacity style={{margin:25}} activeOpacity={0.7} >
+                 <Image source={Images.google} style={{width:43, height:43, left:'35%'}}/>
+                
+               </TouchableOpacity>
+               <TouchableOpacity activeOpacity={0.7}>
+               <Image source={Images.facebook} style={{width:40, height:40, position:'absolute',left:'55%', bottom:27}}/>
+               </TouchableOpacity>
+
             </View>
           </View>
         </View>
@@ -121,7 +130,7 @@ const styles = StyleSheet.create(
       signUpText:{
         position:'absolute', 
         right:80,
-      }
+      },
      
      
   });  
