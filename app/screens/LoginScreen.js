@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import LoginScreen from './screens/LoginScreen';
+
 
 export default class Root extends Component {
   constructor(props){
@@ -12,7 +12,7 @@ export default class Root extends Component {
   render() {
     return(
       <View>
-        <LoginScreen/>
+        <Text>Login</Text>
       </View>
     );
   }; 
