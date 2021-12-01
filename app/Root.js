@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import LoginScreen from './screens/LoginScreen';
+import Navigation from './navigation/index'
 
-export default class Root extends Component {
-  constructor(props){
-    super(props);
-    this.state={}
-  };
+export default class Root extends Component{
+  render(){
+      return(
+          
+              <View style={styles.mainContainer} >
+                  <Navigation/>
+              </View>
 
+          
+      )
+  }
+}
 
-  render() {
-    return(
-      <View>
-        <LoginScreen/>
-      </View>
-    );
-  }; 
-};
+const styles= StyleSheet.create(
+  {
+      mainContainer:{
+          flex:1,
+          backgroundColor:'#ffffff',
+      }
+  }
+)
