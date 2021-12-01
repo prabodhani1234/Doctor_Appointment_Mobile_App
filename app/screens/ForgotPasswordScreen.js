@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image } from "react-native";
+import Images from '../theme/Images';
+
 
 export default class ForgotPasswordScreen extends Component {
   constructor(props){
@@ -13,7 +15,8 @@ export default class ForgotPasswordScreen extends Component {
       <SafeAreaView >
         <View>
           <View>
-            <Text>forgot password</Text>
+            <Image style={{width:'100%'}} source={Images.forgotpassword} />
+            <View style={styles.ImageView}/>
           </View>
         </View>
       </SafeAreaView>
