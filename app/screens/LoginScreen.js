@@ -46,9 +46,9 @@ export default class LoginScreen extends Component {
             </TouchableOpacity>
 
             <View style={{marginTop:"5%"}}>
-              <Text style={{left:80}}>Don't have an account ? </Text>
+              <Text style={{left:55}}>Don't have an account ? </Text>
                <TouchableOpacity style={styles.signUpText} activeOpacity={0.7} onPress={this.onPressSignUpButton}>
-                 <Text style={{color:'#3067F1'}}>Sign Up</Text>
+                 <Text style={{color:'#3067F1'}}>Create Account</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or login with</Text>
 
@@ -132,7 +132,7 @@ const styles = StyleSheet.create(
       },
       signUpText:{
         position:'absolute', 
-        right:80,
+        right:55,
       },
      
      
