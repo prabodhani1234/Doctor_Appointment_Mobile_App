@@ -38,9 +38,17 @@ export default class LoginScreen extends Component {
             <TouchableOpacity>
               <Text style={styles.ForgotPasswortext}>Forgot Password</Text>
             </TouchableOpacity>
-          </View>
-          <View>
-            
+            <TouchableOpacity style={styles.loginButton}>
+                <Text style={styles.loginButtonText}>Log in</Text>
+            </TouchableOpacity>
+
+            <View style={{marginTop:"5%"}}>
+              <Text style={{left:80}}>Don't have an account ? </Text>
+               <TouchableOpacity style={styles.signUpText}>
+                 <Text style={{color:'#3067F1'}}>Sign Up</Text>
+               </TouchableOpacity>
+               <Text style={{textAlign:'center'}}>or login with</Text>
+            </View>
           </View>
         </View>
       </SafeAreaView>
@@ -59,7 +67,7 @@ const styles = StyleSheet.create(
       },
       ImageView:{
         width:'100%',
-        height:300, 
+        height:"100%", 
         backgroundColor:'#3B68E7', 
         position:'absolute',
         opacity:0.5,
@@ -82,18 +90,37 @@ const styles = StyleSheet.create(
 
       },
       inputContainer:{
-        marginLeft:20, 
-        marginTop:50,
+        marginLeft:"5%", 
+        marginTop:"10%",
       },
       inputText:{
-        marginLeft:20,
+        marginLeft:"5%",
         fontFamily:'Roboto-Bold'
       },
       ForgotPasswortext:{
         color:'#3067F1',
         textDecorationLine:'underline',
          marginLeft:'64%', 
-         marginTop:20
+         marginTop:"5%"
+      },
+      loginButton:{
+        alignItems: 'center',
+        justifyContent:'center', 
+        backgroundColor:'#3067F1', 
+        marginLeft:"13%",
+        marginTop:'7%', 
+        width:'75%', 
+        height:50,
+        borderRadius:40,
+      },
+      loginButtonText:{
+        color:'#ffffff', 
+        fontFamily:'Roboto-Bold', 
+        fontSize:21, 
+      },
+      signUpText:{
+        position:'absolute', 
+        right:80,
       }
      
      
