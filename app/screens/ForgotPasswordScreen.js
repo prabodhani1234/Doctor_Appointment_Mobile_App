@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image } from "react-native";
 
 export default class ForgotPasswordScreen extends Component {
   constructor(props){
@@ -10,9 +10,13 @@ export default class ForgotPasswordScreen extends Component {
 
   render() {
     return(
-      <View>
-        <Text>Forgot Password</Text>
-      </View>
+      <SafeAreaView >
+        <View>
+          <View>
+            <Text>forgot password</Text>
+          </View>
+        </View>
+      </SafeAreaView>
     );
   }; 
 };

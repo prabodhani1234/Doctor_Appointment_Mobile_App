@@ -12,6 +12,9 @@ export default class LoginScreen extends Component {
   onPressSignUpButton=()=>{
     this.props.navigation.navigate('SignUp')
   }
+  onPressForgotPasswordButton=()=>{
+    this.props.navigation.navigate('ForgotPassword')
+  }
 
   render() {
     return(
@@ -38,7 +41,7 @@ export default class LoginScreen extends Component {
                 style={styles.inputText}
               />
             </Card>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.onPressForgotPasswordButton}>
               <Text style={styles.ForgotPasswortext}>Forgot Password</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.loginButton} activeOpacity={0.8}>
