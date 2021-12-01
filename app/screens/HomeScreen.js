@@ -13,6 +13,9 @@ export default class HomeScreen extends Component{
                         />
                     </View>
                 </View >
+                <View style={styles.container}>
+                    
+                </View>
                 </ScrollView>
             </SafeAreaView>
         )
@@ -31,6 +34,16 @@ const styles= StyleSheet.create(
             marginTop:"5%" ,
             marginBottom:"5%",
             borderRadius:6
+        },
+        container:{
+            flex:1,
+            backgroundColor:'white',
+            width:'100%',
+            height:'100%',
+            paddingTop:20,
+            paddingBottom:59,
+            borderTopLeftRadius:20,
+            borderTopRightRadius:20
         },
     }
 );
