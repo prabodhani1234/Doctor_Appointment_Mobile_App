@@ -12,11 +12,14 @@ export default class LoginScreen extends Component {
   render() {
     return(
       <SafeAreaView >
-        <View style={styles.MainContainer}>
+        <View>
           <View>
-            <Image source={Images.login} />
+            <Image style={{width:'100%'}} source={Images.login} />
           </View>
           <View style={styles.ImageView}/>
+          <View style={styles.container}>
+            <Text style={styles.mainText}>Login</Text>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -34,10 +37,26 @@ const styles = StyleSheet.create(
       },
       ImageView:{
         width:'100%',
-        height:600, 
+        height:300, 
         backgroundColor:'#3B68E7', 
         position:'absolute',
-        opacity:0.2,
+        opacity:0.5,
+      },
+      container:{
+        width:'100%', 
+        height:"200%", 
+        backgroundColor:'#ffffff', 
+        borderTopLeftRadius:30,
+        borderTopRightRadius:30,
+        position:'absolute',
+        top:'92%',
+      },
+      mainText:{
+        fontSize:22, 
+        fontFamily:'Roboto-Bold',
+        color:'black',
+        marginLeft:"10%",
+        marginTop:'8%'
       }  
      
      
