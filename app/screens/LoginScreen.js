@@ -35,7 +35,9 @@ export default class LoginScreen extends Component {
                 style={styles.inputText}
               />
             </Card>
-
+            <TouchableOpacity>
+              <Text style={styles.ForgotPasswortext}>Forgot Password</Text>
+            </TouchableOpacity>
           </View>
           <View>
             
@@ -86,7 +88,13 @@ const styles = StyleSheet.create(
       inputText:{
         marginLeft:20,
         fontFamily:'Roboto-Bold'
-      } 
+      },
+      ForgotPasswortext:{
+        color:'#3067F1',
+        textDecorationLine:'underline',
+         marginLeft:'64%', 
+         marginTop:20
+      }
      
      
   });  
