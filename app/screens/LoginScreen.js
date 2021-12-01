@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View , SafeAreaView, Image} from "react-native";
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
 import Images from '../theme/Images';
+import {Card} from 'react-native-shadow-cards';
 
 export default class LoginScreen extends Component {
   constructor(props){
@@ -19,6 +20,25 @@ export default class LoginScreen extends Component {
           <View style={styles.ImageView}/>
           <View style={styles.container}>
             <Text style={styles.mainText}>Login</Text>
+            <Card style={styles.inputContainer}>
+              <TextInput
+                placeholder='E-mail'
+                keyboardType="email-address"
+                style={styles.inputText}
+              />
+            </Card>
+            <Card style={{marginLeft:20, marginTop:20}}>
+              <TextInput
+                placeholder='Password'
+                placeholder="Password"
+                secureTextEntry={true}
+                style={styles.inputText}
+              />
+            </Card>
+
+          </View>
+          <View>
+            
           </View>
         </View>
       </SafeAreaView>
@@ -56,8 +76,17 @@ const styles = StyleSheet.create(
         fontFamily:'Roboto-Bold',
         color:'black',
         marginLeft:"10%",
-        marginTop:'8%'
-      }  
+        marginTop:'8%',
+
+      },
+      inputContainer:{
+        marginLeft:20, 
+        marginTop:50,
+      },
+      inputText:{
+        marginLeft:20,
+        fontFamily:'Roboto-Bold'
+      } 
      
      
   });  
