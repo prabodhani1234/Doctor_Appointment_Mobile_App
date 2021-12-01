@@ -13,7 +13,7 @@ export default class Root extends Component {
       <View>
         
           
-          <Text>
+          <Text style={{fontFamily:'Roboto-Bold'}}>
           
             Hellow</Text>
         
