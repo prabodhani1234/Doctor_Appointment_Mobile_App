@@ -8,7 +8,9 @@ export default class SignupScreen extends Component {
     super(props);
     this.state={}
   };
-
+  onPressLoginButton=()=>{
+    this.props.navigation.navigate('Login')
+  }
 
   render() {
     return(
@@ -39,7 +41,7 @@ export default class SignupScreen extends Component {
               </TouchableOpacity>
               <View style={{marginTop:"10%"}}>
               <Text style={{left:80}}>Already have a account ? </Text>
-               <TouchableOpacity style={styles.loginText} activeOpacity={0.7}>
+               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={this.onPressLoginButton}>
                  <Text style={{color:'#3067F1'}}>Login</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or Sign up with</Text>
