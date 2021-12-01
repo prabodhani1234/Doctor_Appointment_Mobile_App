@@ -11,11 +11,34 @@ export default class LoginScreen extends Component {
 
   render() {
     return(
-      <SafeAreaView>
-        <View>
-          <Image source={Images.login} style={{width:'100%'}} />
+      <SafeAreaView >
+        <View style={styles.MainContainer}>
+          <View>
+            <Image source={Images.login} />
+          </View>
+          <View style={styles.ImageView}/>
         </View>
       </SafeAreaView>
     );
   } 
 };
+
+const styles = StyleSheet.create(  
+  {  
+      MainContainer:  
+      {  
+          flex: 1,  
+          justifyContent: 'center',  
+          alignItems: 'center',  
+          backgroundColor:'white'
+      },
+      ImageView:{
+        width:'100%',
+        height:600, 
+        backgroundColor:'#3B68E7', 
+        position:'absolute',
+        opacity:0.2,
+      }  
+     
+     
+  });  
