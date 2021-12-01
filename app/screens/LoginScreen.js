@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import {Card} from 'react-native-shadow-cards';
+import { StyleSheet, Text, View , SafeAreaView, Image} from "react-native";
+import Images from '../theme/Images';
 
 export default class LoginScreen extends Component {
   constructor(props){
@@ -11,9 +11,11 @@ export default class LoginScreen extends Component {
 
   render() {
     return(
-      <Card>
-        <Text>Login</Text>
-      </Card>
+      <SafeAreaView>
+        <View>
+          <Image source={Images.login} style={{width:'100%'}} />
+        </View>
+      </SafeAreaView>
     );
-  }; 
+  } 
 };
