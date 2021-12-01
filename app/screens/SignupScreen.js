@@ -39,10 +39,18 @@ export default class SignupScreen extends Component {
               </TouchableOpacity>
               <View style={{marginTop:"10%"}}>
               <Text style={{left:80}}>Already have a account ? </Text>
-               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={this.onPressSignUpButton}>
+               <TouchableOpacity style={styles.loginText} activeOpacity={0.7}>
                  <Text style={{color:'#3067F1'}}>Login</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or Sign up with</Text>
+
+               <TouchableOpacity style={{margin:25}} activeOpacity={0.7} >
+                 <Image source={Images.google} style={{width:43, height:43, left:'35%'}}/>
+                
+               </TouchableOpacity>
+               <TouchableOpacity activeOpacity={0.7}>
+               <Image source={Images.facebook} style={{width:40, height:40, position:'absolute',left:'55%', bottom:27}}/>
+               </TouchableOpacity>
 
             </View>
             </View>
@@ -72,7 +80,7 @@ const styles = StyleSheet.create(
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
         position:'absolute',
-        top:'85%',
+        top:'93%',
       },
       mainText:{
         fontSize:22, 
