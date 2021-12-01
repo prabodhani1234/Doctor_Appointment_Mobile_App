@@ -13,7 +13,6 @@ export default class SignupScreen extends Component {
   render() {
     return(
       <SafeAreaView>
-        <View>
           <View>
             <Image style={{width:'100%'}} source={Images.signup} />
             <View style={styles.ImageView}/>
@@ -35,8 +34,10 @@ export default class SignupScreen extends Component {
                   style={styles.inputText}
                 />
               </Card>
+              <TouchableOpacity style={styles.loginButton} activeOpacity={0.8}>
+                <Text style={styles.loginButtonText}>Create Account</Text>
+              </TouchableOpacity>
             </View>
-          </View>
       </SafeAreaView>
     );
   }; 
@@ -63,7 +64,7 @@ const styles = StyleSheet.create(
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
         position:'absolute',
-        top:'92%',
+        top:'85%',
       },
       mainText:{
         fontSize:22, 
@@ -80,6 +81,21 @@ const styles = StyleSheet.create(
       inputText:{
         marginLeft:"5%",
         fontFamily:'Roboto-Bold'
+      },
+      loginButton:{
+        alignItems: 'center',
+        justifyContent:'center', 
+        backgroundColor:'#3067F1', 
+        marginLeft:"13%",
+        marginTop:'7%', 
+        width:'75%', 
+        height:50,
+        borderRadius:40,
+      },
+      loginButtonText:{
+        color:'#ffffff', 
+        fontFamily:'Roboto-Bold', 
+        fontSize:21, 
       },
   }
 )
