@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
+import Images from '../theme/Images';
+import {Card} from 'react-native-shadow-cards';
 
 export default class SignupScreen extends Component {
   constructor(props){
@@ -11,9 +12,13 @@ export default class SignupScreen extends Component {
 
   render() {
     return(
-      <View>
-        <Text>SignUp</Text>
-      </View>
+      <SafeAreaView>
+        <View>
+          <View>
+            <Image style={{width:'100%'}} source={Images.signup} />
+          </View>
+        </View>
+      </SafeAreaView>
     );
   }; 
 };
