@@ -34,9 +34,17 @@ export default class SignupScreen extends Component {
                   style={styles.inputText}
                 />
               </Card>
-              <TouchableOpacity style={styles.loginButton} activeOpacity={0.8}>
-                <Text style={styles.loginButtonText}>Create Account</Text>
+              <TouchableOpacity style={styles.accountButton} activeOpacity={0.8}>
+                <Text style={styles.accountButtonText}>Create Account</Text>
               </TouchableOpacity>
+              <View style={{marginTop:"10%"}}>
+              <Text style={{left:80}}>Already have a account ? </Text>
+               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={this.onPressSignUpButton}>
+                 <Text style={{color:'#3067F1'}}>Login</Text>
+               </TouchableOpacity>
+               <Text style={{textAlign:'center'}}>or Sign up with</Text>
+
+            </View>
             </View>
       </SafeAreaView>
     );
@@ -82,7 +90,7 @@ const styles = StyleSheet.create(
         marginLeft:"5%",
         fontFamily:'Roboto-Bold'
       },
-      loginButton:{
+      accountButton:{
         alignItems: 'center',
         justifyContent:'center', 
         backgroundColor:'#3067F1', 
@@ -92,10 +100,14 @@ const styles = StyleSheet.create(
         height:50,
         borderRadius:40,
       },
-      loginButtonText:{
+      accountButtonText:{
         color:'#ffffff', 
         fontFamily:'Roboto-Bold', 
         fontSize:21, 
+      },
+      loginText:{
+        position:'absolute', 
+        right:80,
       },
   }
 )
