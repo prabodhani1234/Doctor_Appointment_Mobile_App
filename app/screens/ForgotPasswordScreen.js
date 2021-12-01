@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default class Root extends Component {
+export default class ForgotPasswordScreen extends Component {
   constructor(props){
     super(props);
     this.state={}

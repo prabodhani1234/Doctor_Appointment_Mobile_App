@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import {Card} from 'react-native-shadow-cards';
 
-
-export default class Root extends Component {
+export default class LoginScreen extends Component {
   constructor(props){
     super(props);
     this.state={}
@@ -11,9 +11,9 @@ export default class Root extends Component {
 
   render() {
     return(
-      <View>
+      <Card>
         <Text>Login</Text>
-      </View>
+      </Card>
     );
   }; 
 };
