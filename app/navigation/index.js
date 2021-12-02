@@ -38,9 +38,9 @@ const bottomTabScreens=()=>(
             inactiveTintColor: 'gray',
         }}
         >
-        <BottomTab.Screen name ="Home" component={Home}/>
-        <BottomTab.Screen name ="Appointment" component={Appointment}/>
-        <BottomTab.Screen name ="Profile" component={Profile}/>
+            <BottomTab.Screen name ="Home" component={Home}/>
+            <BottomTab.Screen name ="Appointment" component={Appointment}/>
+            <BottomTab.Screen name ="Profile" component={Profile}/>
         </BottomTab.Navigator>
   )
 
