@@ -33,14 +33,14 @@ class DoctorCategory extends Component{
 const styles = StyleSheet.create(
     {
       mainCantainer:{
-        height:"95%",
-        width:"41%", 
-        marginLeft:"6%",
+        height:235,
+        width:160, 
+        marginLeft:20,
       },
 
       imageContainer:{
         flex:2,
-        paddingLeft:"18%"
+        paddingLeft:28
       },
 
       imageStyle:{
@@ -52,8 +52,8 @@ const styles = StyleSheet.create(
 
       textMainContainer:{
         flex:1 ,
-        paddingLeft:"7%", 
-        paddingTop:"7%", 
+        paddingLeft:10, 
+        paddingTop:10, 
         backgroundColor:'#E6EBFC'
       },
 
@@ -66,13 +66,13 @@ const styles = StyleSheet.create(
         borderRadius:5
       },
       textStyle:{
-        paddingLeft:"7%", 
+        paddingLeft:10, 
         color:'#ffffff'
       },
       catText:{
         fontFamily:'Roboto-Black',
         color:'black', 
-        paddingTop:"7%"
+        paddingTop:10
       }
     }
   )
