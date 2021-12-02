@@ -12,9 +12,13 @@ export default class Profile extends Component{
                             <Text style={styles.mainText}>My Profile</Text>
                         </View>
                         <View style={styles.imageView}>
-                        <View style={styles.imageContainer}>
-                        <Image source={Images.doctor1} style={styles.imageStyle}/>
-                        </View>
+                            <View style={styles.imageContainer}>
+                                <Image source={Images.doctor1} style={styles.imageStyle}/>
+                            </View>
+                            <View style={styles.textContaniner}>
+                                <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
+                                <Text>ashraf@gmail.com</Text>
+                            </View>
                         </View>
                     </View>
                 </ScrollView>
@@ -61,6 +65,15 @@ const styles=StyleSheet.create(
             height:150,
             left:10, 
             top:10
+        },
+        textContaniner:{
+            alignItems:'center', 
+            marginTop:80
+        },
+        nameTextStyle:{
+            fontFamily:'Roboto-Bold', 
+            fontSize:19, 
+            color:'black'
         }
     }
 )
