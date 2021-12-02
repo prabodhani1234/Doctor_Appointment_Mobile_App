@@ -18,7 +18,31 @@ import Past from '../screens/AppointmentScreens/PastAppointment';
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 const AppointmentTopTab=createMaterialTopTabNavigator();
+const ApointmentStack=createStackNavigator();
 
+
+const AppointemnetStackScreen=()=>(
+    <ApointmentStack.Navigator>
+      <ApointmentStack.Screen name ="Appointment" component={AppointmentTopTabScreen}
+          options={{
+            title: 'Appointment',
+            headerStyle: {
+              backgroundColor: '#3067F1',
+  
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize:26,
+              textAlign:'center',
+              paddingBottom:40,
+              paddingTop:40,
+            }
+          }}
+      
+      />
+    </ApointmentStack.Navigator>
+  )
 
 const AppointmentTopTabScreen=()=>(
 
@@ -71,7 +95,7 @@ const bottomTabScreens=()=>(
         }}
         >
             <BottomTab.Screen name ="Home" component={Home}/>
-            <BottomTab.Screen name ="Appointment" component={AppointmentTopTabScreen}/>
+            <BottomTab.Screen name ="Appointment" component={AppointemnetStackScreen}/>
             <BottomTab.Screen name ="Profile" component={Profile}/>
         </BottomTab.Navigator>
   )
