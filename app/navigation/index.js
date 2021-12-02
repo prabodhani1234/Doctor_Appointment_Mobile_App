@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Login from '../screens/LoginScreen';
 import SignUp from '../screens/SignupScreen';
 import ForgotPassword from '../screens/ForgotPasswordScreen';
@@ -8,11 +10,41 @@ import Home from '../screens/HomeScreen';
 import Appointment from '../screens/AppointmentScreens/AppointmentScreen';
 import Profile from '../screens/ProfileScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Upcoming from '../screens/AppointmentScreens/UpcomingAppointment';
+import Past from '../screens/AppointmentScreens/PastAppointment';
+
 
 
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
+const AppointmentTopTab=createMaterialTopTabNavigator();
+
+
+const AppointmentTopTabScreen=()=>(
+
+    <AppointmentTopTab.Navigator
+    screenOptions={({route}) => ({
+      tabBarIcon: ({focused}) => {
+        let Name;
+  
+        if (route.name === 'Upcoming') {
+          Name = focused ? 'Upcoming' : 'Upcoming';
+        } else if (route.name === 'Past') {
+          Name = focused ? 'Past' : 'Past';
+        }
+        
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#3067F1',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      
+      <AppointmentTopTab.Screen name='Upcoming' component={Upcoming}/>
+      <AppointmentTopTab.Screen name='Past' component={Past}/>
+    </AppointmentTopTab.Navigator>
+  )
 
 const bottomTabScreens=()=>(
     <BottomTab.Navigator
@@ -39,7 +71,7 @@ const bottomTabScreens=()=>(
         }}
         >
             <BottomTab.Screen name ="Home" component={Home}/>
-            <BottomTab.Screen name ="Appointment" component={Appointment}/>
+            <BottomTab.Screen name ="Appointment" component={AppointmentTopTabScreen}/>
             <BottomTab.Screen name ="Profile" component={Profile}/>
         </BottomTab.Navigator>
   )
