@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {  Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity,ScrollView,} from 'react-native';
 import Category from '../components/HomeScreenCom/Category';
 import Images from '../theme/Images';
+import DoctorCategory from '../components/HomeScreenCom/DoctorCategory';
 
 export default class HomeScreen extends Component{
     render(){
@@ -58,6 +59,13 @@ export default class HomeScreen extends Component{
                         <TouchableOpacity activeOpacity={0.5} style={styles.secondSeebuttonContainer} >
                          <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
+                        <View style={styles.doctorCategoryContainer}>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <DoctorCategory imageUri={Images.doctor1}
+                            name="Cardiologiats" doctor="DR. Amelia"
+                            />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
                 </ScrollView>
@@ -118,8 +126,14 @@ const styles= StyleSheet.create(
         secondSeebuttonContainer:{
             position:'absolute',
             left:'80%', 
-            top:'22%',
+            top:'70%',
         },
+        
+
+        doctorCategoryContainer:{
+            height:240, 
+            marginTop:20
+        }
         
     }
 );

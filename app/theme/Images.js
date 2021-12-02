@@ -11,6 +11,8 @@ const Images={
     category3: require('../assets/Images/tooth.png'),
     category4: require('../assets/Images/ear.png'),
     category5: require('../assets/Images/child.png'),
+
+    doctor1: require('../assets/Images/Doctor/1.png'),
 };
 
 export default Images;
