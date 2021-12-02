@@ -3,11 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  SectionList,
-  SafeAreaView,
   Image,
-  FlatList,
-  ScrollView
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
 

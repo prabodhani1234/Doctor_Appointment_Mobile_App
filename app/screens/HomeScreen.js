@@ -22,12 +22,35 @@ export default class HomeScreen extends Component{
                             <Text style={styles.seeAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:140, marginTop:20}}>
-                        
+                        <ScrollView horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        >
                             <TouchableOpacity activeOpacity={0.8} >
-                            <Category imageUri={Images.category}
+                            <Category imageUri={Images.category1}
                             name="Cardiologiats"
                             />
                             </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <Category imageUri={Images.category2}
+                            name="Optimologists"
+                            />
+                            </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <Category imageUri={Images.category3}
+                            name="Dentists"
+                            />
+                            </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <Category imageUri={Images.category4}
+                            name="ENT Specielist"
+                            />
+                            </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <Category imageUri={Images.category5}
+                            name="Pediatrician"
+                            />
+                            </TouchableOpacity>
+                        </ScrollView>
                         </View>
                     </View>
                 </View>

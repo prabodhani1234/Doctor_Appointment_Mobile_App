@@ -6,7 +6,11 @@ const Images={
     google : require('../assets/Images/Google.png'),
     facebook: require('../assets/Images/Facebook.png'),
 
-    category: require('../assets/Images/heart.png'),
+    category1: require('../assets/Images/heart.png'),
+    category2: require('../assets/Images/eye.png'),
+    category3: require('../assets/Images/tooth.png'),
+    category4: require('../assets/Images/ear.png'),
+    category5: require('../assets/Images/child.png'),
 };
 
 export default Images;
