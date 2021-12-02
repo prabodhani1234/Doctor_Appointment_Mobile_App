@@ -12,13 +12,34 @@ import Profile from '../screens/ProfileScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Upcoming from '../screens/AppointmentScreens/UpcomingAppointment';
 import Past from '../screens/AppointmentScreens/PastAppointment';
-
+import AllDoctors from '../screens/AllDoctors';
 
 
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 const AppointmentTopTab=createMaterialTopTabNavigator();
 const ApointmentStack=createStackNavigator();
+const HomeStack=createStackNavigator();
+
+const HomeStackScreen=()=>(
+    <HomeStack.Navigator initialRouteName='Home' headerMode='none'>
+        <HomeStack.Screen name ='Home' component={Home}/>
+        <HomeStack.Screen name ="AllDoctors" component={AllDoctors}
+            options={{
+            title: 'Available Doctors',
+            headerStyle: {
+                backgroundColor: '#3067F1',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize:26,
+            }
+            }}
+        
+        />
+    </HomeStack.Navigator>
+  )
 
 
 const AppointemnetStackScreen=()=>(
@@ -94,7 +115,7 @@ const bottomTabScreens=()=>(
             inactiveTintColor: 'gray',
         }}
         >
-            <BottomTab.Screen name ="Home" component={Home}/>
+            <BottomTab.Screen name ="Home" component={HomeStackScreen}/>
             <BottomTab.Screen name ="Appointment" component={AppointemnetStackScreen}/>
             <BottomTab.Screen name ="Profile" component={Profile}/>
         </BottomTab.Navigator>

@@ -4,8 +4,8 @@ import Category from '../components/HomeScreenCom/Category';
 import Images from '../theme/Images';
 import DoctorCategory from '../components/HomeScreenCom/DoctorCategory';
 
-export default class HomeScreen extends Component{
-    render(){
+function HomeScreen({navigation}){
+    {
         return(
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView  scrollEventThrottle={16}>
@@ -57,8 +57,8 @@ export default class HomeScreen extends Component{
                     </View>
                     <View style={styles.doctordetailsContainer}>
                         <Text style={styles.doccontainer}>Doctors</Text>
-                        <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} >
-                         <Text style={styles.showAllButtonText}>Show All</Text>
+                        <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} onPress={() => navigation.navigate('AllDoctors')} >
+                            <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:240, marginTop:20}}>
                     <ScrollView horizontal={true}
@@ -159,3 +159,5 @@ const styles= StyleSheet.create(
         
     }
 );
+
+export default HomeScreen;
