@@ -14,7 +14,9 @@ export default class HomeScreen extends Component{
                     </View>
                 </View >
                 <View style={styles.container}>
-                    
+                    <View>
+                    <Text style={styles.CatogoryName}>Carogory</Text>
+                    </View>
                 </View>
                 </ScrollView>
             </SafeAreaView>
@@ -45,5 +47,10 @@ const styles= StyleSheet.create(
             borderTopLeftRadius:20,
             borderTopRightRadius:20
         },
+        CatogoryName:{
+            fontSize:24, 
+            fontWeight:'700', 
+            paddingHorizontal:20
+        }
     }
 );
