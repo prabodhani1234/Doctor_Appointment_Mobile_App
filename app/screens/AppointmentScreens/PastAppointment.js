@@ -16,7 +16,13 @@ export default class PastAppointment extends Component{
                             <View>
                         
                                 <AppointmentCom imageUri={Images.doctor1}
-                                name="DR. Amelia Grosh" date='Nov 24 2021 06.30 pm' catogory='Cardiologiats' button='Feedback'
+                                name="DR. Amelia Grosh" date='Nov 24 2021 06.30 pm' catogory='Cardiologiats' button='Feedback' mainButton='Book Appoinment '
+                                />
+                                <AppointmentCom imageUri={Images.doctor2}
+                                name="DR. Harry William" date='Nov 28 2021 06.30 pm' catogory='Optimologists' button='Feedback' mainButton='Book Appoinment '
+                                />
+                                <AppointmentCom imageUri={Images.doctor1}
+                                name="DR. Amelia Grosh" date='Dec 2 2021 06.30 pm' catogory='Cardiologiats' button='Feedback' mainButton='Book Appoinment '
                                 />
                              </View>
                         </ScrollView>
@@ -37,6 +43,7 @@ const styles=StyleSheet.create({
         width: '100%',
         padding: 16,
         paddingTop: 5,
+        height:'100%'
         
       },
 })
