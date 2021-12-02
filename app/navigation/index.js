@@ -5,7 +5,7 @@ import Login from '../screens/LoginScreen';
 import SignUp from '../screens/SignupScreen';
 import ForgotPassword from '../screens/ForgotPasswordScreen';
 import Home from '../screens/HomeScreen';
-import Appointment from '../screens/AppointmentScreen';
+import Appointment from '../screens/AppointmentScreens/AppointmentScreen';
 import Profile from '../screens/ProfileScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
