@@ -1,5 +1,5 @@
 import React, { Component } from 'react';  
-import {  Text, View, StyleSheet, TextInput, SafeAreaView, ScrollView} from 'react-native';
+import {  Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity,ScrollView} from 'react-native';
 
 export default class HomeScreen extends Component{
     render(){
@@ -16,6 +16,9 @@ export default class HomeScreen extends Component{
                 <View style={styles.container}>
                     <View>
                     <Text style={styles.CatogoryName}>Carogory</Text>
+                    <TouchableOpacity activeOpacity={0.5} style={styles.seeAllButtonContainer} >
+                        <Text style={styles.seeAllButtonText}>Show All</Text>
+                    </TouchableOpacity>
                     </View>
                 </View>
                 </ScrollView>
@@ -50,7 +53,18 @@ const styles= StyleSheet.create(
         CatogoryName:{
             fontSize:24, 
             fontWeight:'700', 
-            paddingHorizontal:20
-        }
+            paddingHorizontal:20,
+            color:'black'
+        }, 
+        seeAllButtonContainer:{
+            position:'absolute',
+            left:'80%', 
+            top:27,
+        },
+        seeAllButtonText:{
+            color:'blue',
+            textDecorationLine:'underline'
+        },
+        
     }
 );
