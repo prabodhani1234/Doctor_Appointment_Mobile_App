@@ -18,8 +18,8 @@ export default class HomeScreen extends Component{
                 <View style={styles.container}>
                     <View>
                         <Text style={styles.CatogoryName}>Carogory</Text>
-                        <TouchableOpacity activeOpacity={0.5} style={styles.seeAllButtonContainer} >
-                            <Text style={styles.seeAllButtonText}>Show All</Text>
+                        <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} >
+                            <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:140, marginTop:20}}>
                         <ScrollView horizontal={true}
@@ -53,6 +53,12 @@ export default class HomeScreen extends Component{
                         </ScrollView>
                         </View>
                     </View>
+                    <View style={styles.doctordetailsContainer}>
+                        <Text style={styles.doccontainer}>Doctors</Text>
+                        <TouchableOpacity activeOpacity={0.5} style={styles.secondSeebuttonContainer} >
+                         <Text style={styles.showAllButtonText}>Show All</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 </ScrollView>
             </SafeAreaView>
@@ -78,25 +84,41 @@ const styles= StyleSheet.create(
             backgroundColor:'white',
             width:'100%',
             height:'100%',
-            paddingTop:20,
-            paddingBottom:59,
+            paddingTop:'5%',
+            paddingBottom:"20%",
             borderTopLeftRadius:20,
             borderTopRightRadius:20
         },
         CatogoryName:{
             fontSize:24, 
             fontWeight:'700', 
-            paddingHorizontal:20,
+            paddingHorizontal:"5%",
             color:'black'
         }, 
-        seeAllButtonContainer:{
+        showAllButtonContainer:{
             position:'absolute',
             left:'80%', 
-            top:27,
+            top:"7%",
         },
-        seeAllButtonText:{
+        showAllButtonText:{
             color:'blue',
             textDecorationLine:'underline'
+        },
+        doctordetailsContainer:{
+            flex:1, 
+            backgroundColor:'white', 
+            paddingTop:'5%'
+        },
+        doccontainer:{
+            fontSize:24, 
+            fontWeight:'700', 
+            paddingHorizontal:"5%", 
+            color:'black',
+        },
+        secondSeebuttonContainer:{
+            position:'absolute',
+            left:'80%', 
+            top:'22%',
         },
         
     }
