@@ -76,7 +76,7 @@ const styles=StyleSheet.create({
     },
     mainButtonContainer:{
         backgroundColor:'#3067F1',
-        marginLeft:"55%", 
+        marginLeft:"51%", 
         marginRight:10, 
         position:'absolute', 
         bottom:0.1, 
