@@ -1,5 +1,7 @@
 import React, { Component } from 'react';  
-import {  Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity,ScrollView} from 'react-native';
+import {  Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity,ScrollView,} from 'react-native';
+import Category from '../components/HomeScreenCom/Category';
+import Images from '../theme/Images';
 
 export default class HomeScreen extends Component{
     render(){
@@ -15,10 +17,18 @@ export default class HomeScreen extends Component{
                 </View >
                 <View style={styles.container}>
                     <View>
-                    <Text style={styles.CatogoryName}>Carogory</Text>
-                    <TouchableOpacity activeOpacity={0.5} style={styles.seeAllButtonContainer} >
-                        <Text style={styles.seeAllButtonText}>Show All</Text>
-                    </TouchableOpacity>
+                        <Text style={styles.CatogoryName}>Carogory</Text>
+                        <TouchableOpacity activeOpacity={0.5} style={styles.seeAllButtonContainer} >
+                            <Text style={styles.seeAllButtonText}>Show All</Text>
+                        </TouchableOpacity>
+                        <View style={{height:140, marginTop:20}}>
+                        
+                            <TouchableOpacity activeOpacity={0.8} >
+                            <Category imageUri={Images.category}
+                            name="Cardiologiats"
+                            />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
                 </ScrollView>
