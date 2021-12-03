@@ -31,7 +31,13 @@ export default class SignupScreen extends Component {
               <Card style={{marginLeft:20, marginTop:20}}>
                 <TextInput
                   placeholder='Password'
-                  placeholder="Password"
+                  secureTextEntry={true}
+                  style={styles.inputText}
+                />
+              </Card>
+              <Card style={{marginLeft:20, marginTop:20}}>
+                <TextInput
+                  placeholder=' Confirm Password'
                   secureTextEntry={true}
                   style={styles.inputText}
                 />
@@ -39,7 +45,7 @@ export default class SignupScreen extends Component {
               <TouchableOpacity style={styles.accountButton} activeOpacity={0.8}>
                 <Text style={styles.accountButtonText}>Create Account</Text>
               </TouchableOpacity>
-              <View style={{marginTop:"10%"}}>
+              <View style={{marginTop:"5%"}}>
               <Text style={{left:80}}>Already have a account ? </Text>
                <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={this.onPressLoginButton}>
                  <Text style={{color:'#3067F1'}}>Login</Text>
@@ -94,7 +100,7 @@ const styles = StyleSheet.create(
       },
       inputContainer:{
         marginLeft:"5%", 
-        marginTop:"10%",
+        marginTop:"6%",
       },
       inputText:{
         marginLeft:"5%",
