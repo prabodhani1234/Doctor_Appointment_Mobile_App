@@ -107,8 +107,8 @@ const styles = StyleSheet.create(
         marginBottom:5
       },
       subtext:{
-        marginLeft:28, 
-        marginRight:28, 
+        marginLeft:35, 
+        marginRight:30, 
         textAlign:'justify', 
         fontSize:14,
       }
