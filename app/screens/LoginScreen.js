@@ -1,26 +1,14 @@
-import React, { Component } from "react";
+import React, {useContext, useState} from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
 import Images from '../theme/Images';
 import {Card} from 'react-native-shadow-cards';
+import { AuthContext } from '../navigation/AuthProvider';
 
+const LoginScreen = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
-export default class LoginScreen extends Component {
-  constructor(props){
-    super(props);
-    this.state={}
-  };
-
-  onPressSignUpButton=()=>{
-    this.props.navigation.navigate('SignUp')
-  }
-  onPressForgotPasswordButton=()=>{
-    this.props.navigation.navigate('ForgotPassword')
-  }
-  onPressHomeButton=()=>{
-    this.props.navigation.navigate('Home')
-  }
-
-  render() {
+  const {login} = useContext(AuthContext);
     return(
       <SafeAreaView >
         <View>
@@ -32,29 +20,34 @@ export default class LoginScreen extends Component {
             <Text style={styles.mainText}>Login</Text>
             <Card style={styles.inputContainer}>
               <TextInput
-                placeholder='E-mail'
+                Value={email}
+                onChangeText={(userEmail) => setEmail(userEmail)}
+                placeholder="Email"
                 keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
                 style={styles.inputText}
               />
             </Card>
             <Card style={{marginLeft:20, marginTop:20}}>
               <TextInput
-                placeholder='Password'
+                Value={password}
+                onChangeText={(userPassword) => setPassword(userPassword)}
                 placeholder="Password"
                 secureTextEntry={true}
                 style={styles.inputText}
               />
             </Card>
-            <TouchableOpacity onPress={this.onPressForgotPasswordButton}>
+            <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
               <Text style={styles.ForgotPasswortext}>Forgot Password</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.loginButton} activeOpacity={0.8} onPress={this.onPressHomeButton}>
+            <TouchableOpacity style={styles.loginButton} activeOpacity={0.8} onPress={() => login(email, password)}>
                 <Text style={styles.loginButtonText}>Log in</Text>
             </TouchableOpacity>
 
             <View style={{marginTop:"5%"}}>
               <Text style={{left:55}}>Don't have an account ? </Text>
-               <TouchableOpacity style={styles.signUpText} activeOpacity={0.7} onPress={this.onPressSignUpButton}>
+               <TouchableOpacity style={styles.signUpText} activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')} >
                  <Text style={{color:'#3067F1'}}>Create Account</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or login with</Text>
@@ -72,7 +65,6 @@ export default class LoginScreen extends Component {
         </View>
       </SafeAreaView>
     );
-  } 
 };
 
 const styles = StyleSheet.create(  
@@ -141,6 +133,6 @@ const styles = StyleSheet.create(
         position:'absolute', 
         right:55,
       },
-     
-     
-  });  
+
+  }); 
+  export default LoginScreen;  
