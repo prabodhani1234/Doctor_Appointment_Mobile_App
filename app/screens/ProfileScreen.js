@@ -1,9 +1,11 @@
-import React, { Component } from 'react';  
-import { SafeAreaView, StyleSheet, Text, View,ScrollView,Image } from 'react-native';
+import React, { useContext } from 'react';  
+import { SafeAreaView, StyleSheet, Text, View,ScrollView,Image,TouchableOpacity } from 'react-native';
 import Images from '../theme/Images';
+import { AuthContext } from '../navigation/AuthProvider';
 
-export default class Profile extends Component{
-    render(){
+const Profile=()=>{
+    const { logout}=useContext(AuthContext);
+
         return(
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView >
@@ -18,14 +20,17 @@ export default class Profile extends Component{
                             <View style={styles.textContaniner}>
                                 <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
                                 <Text>ashraf@gmail.com</Text>
+                                <TouchableOpacity onPress={()=> logout()}>
+                                    <Text style={{textAlign:'center'}}>Log Out</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>
                 </ScrollView>
             </SafeAreaView>
         )
-    }
-}
+    
+};
 const styles=StyleSheet.create(
     {
         mainContainer:{ 
@@ -77,3 +82,4 @@ const styles=StyleSheet.create(
         }
     }
 )
+export default Profile;
