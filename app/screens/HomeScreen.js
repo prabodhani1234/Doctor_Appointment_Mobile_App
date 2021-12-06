@@ -10,7 +10,6 @@ function HomeScreen({navigation}){
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView  scrollEventThrottle={16}>
                 <View >
-                    <Text style={styles.mainTittle}>Find Your Doctor</Text>
                     <View style={styles.textInputContainer}>
                         <TextInput 
                         placeholder='Search Your Doctor'
@@ -99,18 +98,11 @@ const styles= StyleSheet.create(
             flex:1,
             backgroundColor:'#3067F1',
         },
-        mainTittle:{
-            fontSize:26,
-            fontFamily:'Roboto-Bold',
-            color:'#ffffff',
-            marginLeft:'10%',
-            marginTop:'10%'
-        },
         textInputContainer:{
             backgroundColor:'#ffffff',
             marginLeft:"8%",
             marginRight:"8%",
-            marginTop:"5%" ,
+            marginTop:"10%" ,
             marginBottom:"5%",
             borderRadius:6
         },
@@ -120,7 +112,7 @@ const styles= StyleSheet.create(
             width:'100%',
             height:'100%',
             paddingTop:'5%',
-            paddingBottom:"22.7%",
+            paddingBottom:"11%",
             borderTopLeftRadius:20,
             borderTopRightRadius:20
         },

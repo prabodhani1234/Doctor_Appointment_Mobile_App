@@ -3,9 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import Login from '../screens/LoginScreen';
-import SignUp from '../screens/SignupScreen';
-import ForgotPassword from '../screens/ForgotPasswordScreen';
 import Home from '../screens/HomeScreen';
 import Appointment from '../screens/AppointmentScreens/AppointmentScreen';
 import Profile from '../screens/ProfileScreen';
@@ -23,7 +20,23 @@ const HomeStack=createStackNavigator();
 
 const HomeStackScreen=()=>(
     <HomeStack.Navigator>
-        <HomeStack.Screen name ='Home' component={Home}/>
+        <HomeStack.Screen name ='Home' component={Home}
+          options={{
+            title: 'Find Your Specialist',
+            headerStyle: {
+              backgroundColor: '#3067F1',
+            },
+            
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize:26,
+              paddingTop:10,
+              marginLeft:'5%'
+              
+            },
+          }}
+        />
         <HomeStack.Screen name ="AllDoctors" component={AllDoctors}
             options={{
             title: 'Available Doctors',
