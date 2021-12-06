@@ -1,18 +1,16 @@
-import React, { Component } from "react";
+import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
 import Images from '../theme/Images';
 import {Card} from 'react-native-shadow-cards';
+import { AuthContext } from '../navigation/AuthProvider';
 
-export default class SignupScreen extends Component {
-  constructor(props){
-    super(props);
-    this.state={}
-  };
-  onPressLoginButton=()=>{
-    this.props.navigation.navigate('Login')
-  }
+const SignupScreen = ({navigation}) => {
 
-  render() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+  const {register} = useContext(AuthContext);
+
     return(
       <SafeAreaView>
           <View>
@@ -23,31 +21,37 @@ export default class SignupScreen extends Component {
             <Text style={styles.mainText}>Create Account</Text>
               <Card style={styles.inputContainer}>
                 <TextInput
+                  value={email}
+                  onChangeText={(userEmail) => setEmail(userEmail)}
                   placeholder='E-mail'
                   keyboardType="email-address"
+                  autoCapitalize="none"
+                  autoCorrect={false}
                   style={styles.inputText}
                 />
               </Card>
               <Card style={{marginLeft:20, marginTop:20}}>
                 <TextInput
+                  value={password}
+                  onChangeText={(userPassword) => setPassword(userPassword)}
                   placeholder='Password'
-                  secureTextEntry={true}
                   style={styles.inputText}
                 />
               </Card>
               <Card style={{marginLeft:20, marginTop:20}}>
                 <TextInput
+                  value={confirmPassword}
+                  onChangeText={(userPassword) => setConfirmPassword(userPassword)}
                   placeholder=' Confirm Password'
-                  secureTextEntry={true}
                   style={styles.inputText}
                 />
               </Card>
-              <TouchableOpacity style={styles.accountButton} activeOpacity={0.8}>
+              <TouchableOpacity onPress={() => register(email, password)} style={styles.accountButton} activeOpacity={0.8}>
                 <Text style={styles.accountButtonText}>Create Account</Text>
               </TouchableOpacity>
               <View style={{marginTop:"5%"}}>
               <Text style={{left:80}}>Already have a account ? </Text>
-               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={this.onPressLoginButton}>
+               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={() => navigation.navigate('Login')}>
                  <Text style={{color:'#3067F1'}}>Login</Text>
                </TouchableOpacity>
                <Text style={{textAlign:'center'}}>or Sign up with</Text>
@@ -64,7 +68,6 @@ export default class SignupScreen extends Component {
             </View>
       </SafeAreaView>
     );
-  }; 
 };
 const styles = StyleSheet.create(  
   {  
@@ -127,3 +130,4 @@ const styles = StyleSheet.create(
       },
   }
 )
+export default SignupScreen;
