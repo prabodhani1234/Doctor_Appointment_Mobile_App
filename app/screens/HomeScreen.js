@@ -17,7 +17,7 @@ function HomeScreen({navigation}){
                     </View>
                 </View >
                 <View style={styles.container}>
-                    <View>
+                    <View style={{flex:1}}>
                         <Text style={styles.CatogoryName}>Carogory</Text>
                         <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} >
                             <Text style={styles.showAllButtonText}>Show All</Text>
@@ -109,8 +109,6 @@ const styles= StyleSheet.create(
         container:{
             flex:1,
             backgroundColor:'white',
-            width:'100%',
-            height:'100%',
             paddingTop:'5%',
             paddingBottom:"11%",
             borderTopLeftRadius:20,
