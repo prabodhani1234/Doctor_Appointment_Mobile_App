@@ -19,9 +19,9 @@ class DocProp extends Component{
 
   render(){
     return(
-      <Card style={{ width:300, height:210,marginLeft:20,marginTop:10,position:'absolute',left:'6%', top:-100}}>
+      <Card style={styles.mainContainer}>
           <View>
-            <Image source={this.props.imageUri} style={{ height:120, width:120 ,resizeMode:'contain',marginLeft:20, marginTop:20}}/>
+            <Image source={this.props.imageUri} style={styles.imageContainer}/>
            
           </View>
           
@@ -29,4 +29,23 @@ class DocProp extends Component{
     )
   }
 }
+const styles= StyleSheet.create(
+    {
+        mainContainer:{
+            flex:1,
+            width:"84%", 
+            height:"27%",
+            position:'absolute',
+            left:'8%', 
+            top:'-12%'
+        },
+        imageContainer:{
+            height:120, 
+            width:120 ,
+            resizeMode:'contain',
+            marginLeft:'8%', 
+            marginTop:'8%'
+        }
+    }
+)
 export default DocProp;
