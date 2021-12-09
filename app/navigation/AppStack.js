@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Upcoming from '../screens/AppointmentScreens/UpcomingAppointment';
 import Past from '../screens/AppointmentScreens/PastAppointment';
 import AllDoctors from '../screens/AllDoctors';
-import DoctorProfile from '../screens/DoctorProfile';
+import DoctorProfile from '../screens/DoctorProfileScreen';
 
 
 const Stack=createStackNavigator();
