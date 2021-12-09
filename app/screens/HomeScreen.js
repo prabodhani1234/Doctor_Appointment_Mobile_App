@@ -1,8 +1,9 @@
 import React, { Component } from 'react';  
-import {  Text, View, StyleSheet, TextInput, SafeAreaView, TouchableOpacity,ScrollView,} from 'react-native';
+import {  Text, View, StyleSheet, TextInput, SafeAreaView,FlatList, TouchableOpacity,ScrollView,} from 'react-native';
 import Category from '../components/HomeScreenCom/Category';
 import Images from '../theme/Images';
 import DoctorCategory from '../components/HomeScreenCom/DoctorCategory';
+import DoctorDetails from '../stores/DoctorDetails';
 
 function HomeScreen({navigation}){
     {
@@ -60,31 +61,19 @@ function HomeScreen({navigation}){
                             <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:240, marginTop:20}}>
-                    <ScrollView horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    >
-                        <TouchableOpacity activeOpacity={0.8} >
-                        <DoctorCategory imageUri={Images.doctor1}
-                        name="Cardiologiats" doctor="DR. Amelia"
-                        />
-                        </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8}>
-                        <DoctorCategory imageUri={Images.doctor2}
-                        name="Optimologists" doctor="DR. Harry "
-                        />
-                        </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8}>
-                        <DoctorCategory imageUri={Images.doctor3}
-                        name="Dentists" doctor="DR. Oliver"
-                        />
-                        </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8}>
-                        <DoctorCategory imageUri={Images.doctor4}
-                        name="ENT Specielist" doctor="DR. Anna"
-                        />
-                        </TouchableOpacity>
-                    </ScrollView>
-                    </View>
+                            <FlatList
+                            showsHorizontalScrollIndicator={false}
+                            horizontal={true}
+                            data={DoctorDetails}
+                            renderItem={({item})=>
+                            <TouchableOpacity activeOpacity={0.8}>
+                            <DoctorCategory 
+                            name={item.name} 
+                            imageUri={item.imageUri} 
+                            Catogory={item.Catogory} /></TouchableOpacity>}
+                            />
+                    
+                        </View>
                     </View>
                 </View>
                 </ScrollView>

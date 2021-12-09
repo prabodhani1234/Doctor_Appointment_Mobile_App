@@ -17,10 +17,10 @@ class DoctorCategory extends Component{
           <View style={styles.textMainContainer}>
               <View style={styles.textContainer}>
                 
-                <Text style={styles.textStyle}>{this.props.doctor}</Text>
+                <Text style={styles.textStyle}>{this.props.name}</Text>
               </View>
               <View>
-                <Text style={styles.catText}>{this.props.name}</Text>
+                <Text style={styles.catText}>{this.props.Catogory}</Text>
                 <Text style={{fontSize:12}}>Reating</Text>
               </View>
                 
