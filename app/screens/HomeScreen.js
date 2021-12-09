@@ -50,7 +50,7 @@ function HomeScreen({navigation}){
                             horizontal={true}
                             data={DoctorDetails}
                             renderItem={({item})=>
-                            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('DoctorProfile')}>
+                            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('DoctorProfile', item)}>
                             <DoctorCategory 
                             name={item.name} 
                             img={item.imageUri} 

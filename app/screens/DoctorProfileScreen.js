@@ -5,14 +5,17 @@ import DocProp from '../components/ProfileScreenCom/DoctorProfileCom';
 import Icon  from 'react-native-vector-icons/FontAwesome';
 import Images from '../theme/Images';
 
-const DoctorProfileScreen = ({navigation}) => {
+const DoctorProfileScreen = ({navigation, route}) => {
+
+    const DoctorDetails = route.params;
+
         return(
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView>
                     
                     <View style={styles.Container}>
                         
-                        <DocProp  imageUri={Images.doctor1} name='DR. Anna' type='Dentist' Patients='25k' price='LK.2000'
+                        <DocProp  imageUri={DoctorDetails.imageUri} name={DoctorDetails.name} type={DoctorDetails.Catogory} Patients={DoctorDetails.patients} price={DoctorDetails.price}
                         
                         />
                         <TouchableOpacity style={styles.image1Container} activeOpacity={0.8}>
@@ -27,14 +30,11 @@ const DoctorProfileScreen = ({navigation}) => {
 
                         <View style={styles.infoContainer}>
                             <Text style={styles.textTittle}>About</Text>
-                            <Text style={styles.textContainer}>Dr. Anna is a the topmost Dentist specialist in amedical 
-                            hospital in new york.Dr.Anna is a physician with above 12 years of experience.she achieved 
-                            several awards for her wonderful contribution in her own field.Dr.Anna has been one of the top 
-                            rated doctor in the community. Dr.Anna is known for 100% guaranteed results.</Text>
+                            <Text style={styles.textContainer}>{DoctorDetails.about}</Text>
                             <Text style={styles.textTittle}>Qulification</Text>
-                            <Text style={styles.textContainer}>M.B.B.S.F.C.P.S Cardio specialist</Text>
+                            <Text style={styles.textContainer}>{DoctorDetails.qulification}</Text>
                             <Text style={styles.textTittle}>Working Time</Text>
-                            <Text style={styles.textContainer}>Mon - Fri 09.00 AM - 20.00 PM</Text>
+                            <Text style={styles.textContainer}>{DoctorDetails.time}</Text>
                         </View>
                         
                     </View>
