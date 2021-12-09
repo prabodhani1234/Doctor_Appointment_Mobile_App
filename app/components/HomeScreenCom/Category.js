@@ -12,7 +12,7 @@ class Category extends Component{
       return(
         <Card style={styles.mainCantainer}>
             <View style={styles.container}>
-            <Image source={this.props.imageUri} style={styles.imageStyle}/>
+            <Image source={this.props.img} style={styles.imageStyle}/>
             </View>
             <View style={styles.nameContainer}>
               <Text style={styles.nameText}>{this.props.name}</Text>

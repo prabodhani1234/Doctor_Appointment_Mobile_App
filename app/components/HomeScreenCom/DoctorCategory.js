@@ -12,7 +12,7 @@ class DoctorCategory extends Component{
     return(
       <Card style={styles.mainCantainer}>
           <View style={styles.imageContainer}>
-          <Image source={this.props.imageUri} style={styles.imageStyle}/>
+          <Image source={this.props.img} style={styles.imageStyle}/>
           </View>
           <View style={styles.textMainContainer}>
               <View style={styles.textContainer}>

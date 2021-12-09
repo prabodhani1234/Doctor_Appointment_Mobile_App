@@ -4,6 +4,8 @@ import Category from '../components/HomeScreenCom/Category';
 import Images from '../theme/Images';
 import DoctorCategory from '../components/HomeScreenCom/DoctorCategory';
 import DoctorDetails from '../stores/DoctorDetails';
+import CategoryDetails from '../stores/CategoryDetails';
+
 
 function HomeScreen({navigation}){
     {
@@ -24,35 +26,17 @@ function HomeScreen({navigation}){
                             <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:140, marginTop:20}}>
-                        <ScrollView horizontal={true}
-                        showsHorizontalScrollIndicator={false}
-                        >
-                            <TouchableOpacity activeOpacity={0.8} >
-                            <Category imageUri={Images.category1}
-                            name="Cardiologiats"
-                            />
-                            </TouchableOpacity>
+                            <FlatList
+                            showsHorizontalScrollIndicator={false}
+                            horizontal={true}
+                            data={CategoryDetails}
+                            renderItem={({item})=>
                             <TouchableOpacity activeOpacity={0.8}>
-                            <Category imageUri={Images.category2}
-                            name="Optimologists"
+                            <Category 
+                            name={item.name} 
+                            img={item.imageUri} />
+                            </TouchableOpacity>}
                             />
-                            </TouchableOpacity>
-                            <TouchableOpacity activeOpacity={0.8}>
-                            <Category imageUri={Images.category3}
-                            name="Dentists"
-                            />
-                            </TouchableOpacity>
-                            <TouchableOpacity activeOpacity={0.8}>
-                            <Category imageUri={Images.category4}
-                            name="ENT Specielist"
-                            />
-                            </TouchableOpacity>
-                            <TouchableOpacity activeOpacity={0.8}>
-                            <Category imageUri={Images.category5}
-                            name="Pediatrician"
-                            />
-                            </TouchableOpacity>
-                        </ScrollView>
                         </View>
                     </View>
                     <View style={styles.doctordetailsContainer}>
@@ -69,7 +53,7 @@ function HomeScreen({navigation}){
                             <TouchableOpacity activeOpacity={0.8}>
                             <DoctorCategory 
                             name={item.name} 
-                            imageUri={item.imageUri} 
+                            img={item.imageUri} 
                             Catogory={item.Catogory} /></TouchableOpacity>}
                             />
                     
