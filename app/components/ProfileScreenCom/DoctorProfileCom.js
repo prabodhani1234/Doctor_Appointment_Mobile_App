@@ -48,10 +48,10 @@ const styles= StyleSheet.create(
         mainContainer:{
             flex:1,
             width:"84%", 
-            height:"27%",
+            height:"35%",
             position:'absolute',
             left:'8%', 
-            top:'-12%'
+            top:'-15%'
         },
         imageContainer:{
             height:120, 
