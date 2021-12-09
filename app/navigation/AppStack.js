@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Upcoming from '../screens/AppointmentScreens/UpcomingAppointment';
 import Past from '../screens/AppointmentScreens/PastAppointment';
 import AllDoctors from '../screens/AllDoctors';
+import DoctorProfile from '../screens/DoctorProfile';
 
 
 const Stack=createStackNavigator();
@@ -51,6 +52,20 @@ const HomeStackScreen=()=>(
             }}
         
         />
+        <HomeStack.Screen name="DoctorProfile" component={DoctorProfile}
+        options={{
+          title: 'Doctor Profile',
+          headerStyle: {
+            backgroundColor: '#3067F1',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:26,
+          }
+        }}
+      
+      />
     </HomeStack.Navigator>
   )
 
