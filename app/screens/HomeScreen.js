@@ -70,6 +70,8 @@ const styles= StyleSheet.create(
         mainContainer:{ 
             flex:1,
             backgroundColor:'#3067F1',
+            alignItems:'center',
+            justifyContent:'center'
         },
         textInputContainer:{
             backgroundColor:'#ffffff',
