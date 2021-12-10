@@ -21,12 +21,11 @@ const Profile=()=>{
                             </View>
                             <View style={styles.textContaniner}>
                                 <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
-                                <View style={styles.editButtonContainer}>
                                     <Text style={styles.emailText}>ashraf@gmail.com</Text>
-                                    <TouchableOpacity >
-                                        <Text>Edit</Text>
+                                    <TouchableOpacity style={styles.editButtonContainer}>
+                                        <Icon name='edit' color={'#3067F1'} size={18}/>
+                                        <Text style={styles.editButtontext}>Edit</Text>
                                     </TouchableOpacity>
-                                </View>
                             </View>
                             <View style={styles.manuContainer}>
                                 <TouchableOpacity onPress={() => {}} activeOpacity={0.5} >
@@ -132,20 +131,23 @@ const styles=StyleSheet.create(
             flexDirection: 'row',
             paddingVertical: 15,
            
-          },
-          menuItemText: {
+        },
+        menuItemText: {
             color: '#777777',
             marginLeft: 20,
             fontWeight: '600',
             fontSize: 16,
             lineHeight: 26,
-          },
-          editButtonContainer:{
-              flexDirection:'row'
-          },
-          editButtontext:{
-              color:'#3067F1'
-          },
+        },
+        editButtonContainer:{
+            flexDirection:'row',
+            marginLeft:10,
+            marginTop:6
+        },
+        editButtontext:{
+            color:'#3067F1',
+            paddingLeft:5
+        },
     }
 )
 export default Profile;
