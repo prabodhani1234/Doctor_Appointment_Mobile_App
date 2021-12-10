@@ -21,37 +21,41 @@ const Profile=()=>{
                             </View>
                             <View style={styles.textContaniner}>
                                 <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
-                                <Text>ashraf@gmail.com</Text>
-                                
+                                <View style={styles.editButtonContainer}>
+                                    <Text style={styles.emailText}>ashraf@gmail.com</Text>
+                                    <TouchableOpacity >
+                                        <Text>Edit</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                             <View style={styles.manuContainer}>
                                 <TouchableOpacity onPress={() => {}} activeOpacity={0.5} >
                                     <View style={styles.menuItem}>
-                                        <Icon name='credit-card' size={25} style={{paddingRight:6}}/>
+                                        <Icon name='credit-card' size={25} color={'#3067F1'} style={{paddingRight:6}}/>
                                         <Text style={styles.menuItemText}>Payment</Text>
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {}} activeOpacity={0.5}>
                                     <View style={styles.menuItem}>
-                                        <Icon name='map-marker-alt' size={25} style={{paddingRight:15}} />
+                                        <Icon name='map-marker-alt' size={25} color={'#3067F1'} style={{paddingRight:15}} />
                                         <Text style={styles.menuItemText}>Location</Text>
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {}} activeOpacity={0.5}>
                                     <View style={styles.menuItem}>
-                                        <Icon name='user-edit' size={25} style={{paddingRight:3}}/>
+                                        <Icon name='user-edit' size={25} color={'#3067F1'} style={{paddingRight:3}}/>
                                         <Text style={styles.menuItemText}>Support</Text>
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => {}} activeOpacity={0.5}>
                                     <View style={styles.menuItem}>
-                                        <Icon name='cog' size={25} style={{paddingRight:10}}/>
+                                        <Icon name='cog' size={25} color={'#3067F1'} style={{paddingRight:10}}/>
                                         <Text style={styles.menuItemText}>Settings</Text>
                                     </View>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={()=> logout()} activeOpacity={0.5}>
                                     <View style={styles.menuItem}>
-                                        <Icon name='sign-out-alt' size={25} style={{paddingRight:10}}/>
+                                        <Icon name='sign-out-alt' size={25} color={'#3067F1'} style={{paddingRight:10}}/>
                                         <Text style={styles.menuItemText}>Log Out</Text>
                                     </View>
                                 </TouchableOpacity>
@@ -113,10 +117,17 @@ const styles=StyleSheet.create(
             fontSize:19, 
             color:'black'
         },
+        emailText:{
+            color: '#777777',
+            fontWeight: '600',
+            fontSize: 15,
+            
+        },
         manuContainer:{
             marginTop:'6%',
             marginLeft:'10%'
         },
+        
         menuItem: {
             flexDirection: 'row',
             paddingVertical: 15,
@@ -128,6 +139,12 @@ const styles=StyleSheet.create(
             fontWeight: '600',
             fontSize: 16,
             lineHeight: 26,
+          },
+          editButtonContainer:{
+              flexDirection:'row'
+          },
+          editButtontext:{
+              color:'#3067F1'
           },
     }
 )
