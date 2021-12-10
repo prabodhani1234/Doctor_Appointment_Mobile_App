@@ -8,7 +8,7 @@ export default class Appointment extends Component{
     render(){
         return(
             <SafeAreaView style={styles.mainContainer}>
-                <ScrollView >
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         <DoctorsCom name='DR.Anna' catogory='Dentist'year='2 years' imageUri={Images.doctor1}/>
                     </View>
