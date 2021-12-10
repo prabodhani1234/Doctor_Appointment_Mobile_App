@@ -5,16 +5,13 @@ import { AuthContext } from '../navigation/AuthProvider';
 import Icon  from 'react-native-vector-icons/FontAwesome5';
 
 
-const Profile=()=>{
+const Profile=({navigation})=>{
     const { logout}=useContext(AuthContext);
 
         return(
             <SafeAreaView >
                 <ScrollView >
                     <View style={styles.mainContainer}>
-                        <View style={styles. mainTextContainer}>
-                            <Text style={styles.mainText}>My Profile</Text>
-                        </View>
                         <View style={styles.imageView}>
                             <View style={styles.imageContainer}>
                                 <Image source={Images.doctor1} style={styles.imageStyle}/>
@@ -22,7 +19,7 @@ const Profile=()=>{
                             <View style={styles.textContaniner}>
                                 <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
                                     <Text style={styles.emailText}>ashraf@gmail.com</Text>
-                                    <TouchableOpacity style={styles.editButtonContainer}>
+                                    <TouchableOpacity style={styles.editButtonContainer} onPress={() => navigation.navigate('EditProfile')}>
                                         <Icon name='edit' color={'#3067F1'} size={18}/>
                                         <Text style={styles.editButtontext}>Edit</Text>
                                     </TouchableOpacity>
@@ -72,24 +69,16 @@ const styles=StyleSheet.create(
         mainContainer:{ 
             flex:1,
             backgroundColor:'#3067F1',
-        },
-        mainTextContainer:{
-            flex:1,
-            marginBottom:"40%",
-            paddingTop:25
-        },
-        mainText:{
-            fontSize:26,
-            color:"#ffffff",
-            textAlign:'center'
+            
         },
         imageView:{
             flex:1, 
             backgroundColor:'white', 
             width:'100%',
-            height:515, 
+            height:522, 
             borderTopLeftRadius:20, 
-            borderTopRightRadius:20
+            borderTopRightRadius:20,
+            marginTop:"40%"
         }, 
         imageContainer:{
             width:170, 

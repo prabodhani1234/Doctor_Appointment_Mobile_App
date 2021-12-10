@@ -11,13 +11,38 @@ import Upcoming from '../screens/AppointmentScreens/UpcomingAppointment';
 import Past from '../screens/AppointmentScreens/PastAppointment';
 import AllDoctors from '../screens/AllDoctors';
 import DoctorProfile from '../screens/DoctorProfileScreen';
-
+import EditProfile from '../screens/EditProfileScreen';
 
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
 const AppointmentTopTab=createMaterialTopTabNavigator();
 const ApointmentStack=createStackNavigator();
 const HomeStack=createStackNavigator();
+const ProfileStack=createStackNavigator();
+
+
+
+const ProfileStackScreen=()=>(
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name='Profile' component={Profile}
+    options={{
+      title: 'My Profile',
+      headerStyle: {
+        backgroundColor: '#3067F1',
+      },
+      
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize:26,
+        textAlign:'center'
+        
+      },
+    }}
+    />
+    <ProfileStack.Screen name='EditProfile' component={EditProfile}/>
+  </ProfileStack.Navigator>
+)
 
 const HomeStackScreen=()=>(
     <HomeStack.Navigator>
@@ -148,7 +173,7 @@ class index extends Component{
         >
             <BottomTab.Screen name ="Home" component={HomeStackScreen}/>
             <BottomTab.Screen name ="Appointment" component={AppointemnetStackScreen}/>
-            <BottomTab.Screen name ="Profile" component={Profile}/>
+            <BottomTab.Screen name ="Profile" component={ProfileStackScreen}/>
         </BottomTab.Navigator>
             
         )
