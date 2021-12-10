@@ -11,10 +11,6 @@ export default class Appointment extends Component{
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView >
                     <View>
-                        <View style={styles. mainTextContainer}>
-                            <Text style={styles.mainText}>Available Doctors</Text>
-                            
-                        </View>
                         
                     </View>
                 </ScrollView>
@@ -26,20 +22,8 @@ const styles=StyleSheet.create(
     {
         mainContainer:{ 
             flex:1,
-            backgroundColor:'#3067F1',
+            backgroundColor:'#ffffff',
         },
-        mainTextContainer:{
-            flex:1,
-            marginBottom:"40%",
-            paddingTop:25
-        },
-        mainText:{
-            fontSize:26,
-            color:"#ffffff",
-            textAlign:'center',
-            position:'absolute',
-            left:'25%',
-            top:'60%'
-        },
+        
     }
 )
