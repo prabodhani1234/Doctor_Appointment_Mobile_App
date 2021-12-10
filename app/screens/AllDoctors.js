@@ -11,6 +11,9 @@ export default class Appointment extends Component{
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         <DoctorsCom name='DR.Anna' catogory='Dentist'year='2 years' imageUri={Images.doctor1}/>
+                        <TouchableOpacity >
+                            <Text >Book Appointment</Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
             </SafeAreaView>
