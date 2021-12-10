@@ -1,6 +1,7 @@
 import React, { Component } from 'react';  
 import { SafeAreaView, StyleSheet, Text, View,ScrollView,TouchableOpacity  } from 'react-native';
 import DoctorsCom from '../components/HomeScreenCom/DoctorsCom';
+import Images from '../theme/Images';
 
 export default class Appointment extends Component{
     
@@ -9,7 +10,7 @@ export default class Appointment extends Component{
             <SafeAreaView style={styles.mainContainer}>
                 <ScrollView >
                     <View>
-                        <DoctorsCom name='DR.Anna' catogory='Dentist'year='2 years'/>
+                        <DoctorsCom name='DR.Anna' catogory='Dentist'year='2 years' imageUri={Images.doctor1}/>
                     </View>
                 </ScrollView>
             </SafeAreaView>

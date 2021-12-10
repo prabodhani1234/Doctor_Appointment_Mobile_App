@@ -3,7 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
-  ScrollView
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -11,7 +12,7 @@ class DoctorsCom extends Component{
   render(){
     return(
         <View style={styles.mainContainer}>
-            <View style={{marginLeft:17,marginTop:5}}>
+            <View style={{marginLeft:17,marginTop:10}}>
                 <Text style={styles.nameText}>{this.props.name}</Text>
                 <Text style={styles.otherText}>{this.props.catogory}</Text>
                 <Text style={{fontFamily:'Roboto-Bold'}}>Experience</Text>
@@ -25,6 +26,15 @@ class DoctorsCom extends Component{
                     <Icon name='star' size={20} style={styles.starStyles} />
                 </View>
             </View>
+            <View style={{flexDirection:'row'}}>
+                <View>
+                    <Image source={this.props.imageUri} style={styles.imageContainer}/>
+                </View>
+                <TouchableOpacity style={styles.buttonContainer}>
+                    <Text style={styles.buttonText}>Book Appointment</Text>
+                </TouchableOpacity>
+            </View>
+            
         </View>
     )
   }
@@ -33,13 +43,14 @@ const styles=StyleSheet.create(
     {
         mainContainer:{
             flex:1,
-            width:345, 
-            height:135, 
+            width:335, 
+            height:150, 
             elevation:10,
             backgroundColor:'#ffffff', 
             marginTop:20,
             marginBottom:2, 
-            marginRight:2 
+            marginRight:2 ,
+            flexDirection:'row',
         },
         nameText:{
             color:'black', 
@@ -56,6 +67,26 @@ const styles=StyleSheet.create(
         },
         starStyles:{
             color:'#EFE12B'
+        },
+        imageContainer:{
+            height:100, 
+            width:100 , 
+            left:'87%',
+            top:'7%' 
+        },
+        buttonContainer:{
+            backgroundColor:'#3067F1',  
+            position:'absolute', 
+            left:'55%',
+            top:'77%',
+            borderRadius:5,
+            padding:3,
+            paddingLeft:15,
+            paddingRight:15
+        },
+        buttonText:{
+            textAlign:'center', 
+            color:'#ffffff'
         }
     }
 )
