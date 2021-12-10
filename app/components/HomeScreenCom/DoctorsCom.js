@@ -47,7 +47,7 @@ const styles=StyleSheet.create(
             height:150, 
             elevation:10,
             backgroundColor:'#ffffff', 
-            marginTop:20,
+            marginTop:10,
             marginBottom:2, 
             marginRight:2 ,
             flexDirection:'row',
