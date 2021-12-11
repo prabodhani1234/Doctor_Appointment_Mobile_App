@@ -30,6 +30,9 @@ class DoctorsCom extends Component{
                 <View>
                     <Image source={this.props.imageUri} style={styles.imageContainer}/>
                 </View>
+                <TouchableOpacity style={styles.buttonContainer} >
+                    <Text style={styles.buttonText}>Book Appointment</Text>
+                </TouchableOpacity>
             </View>
             
         </View>

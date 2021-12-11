@@ -8,7 +8,8 @@ const DoctorDetails = [
       qulification:'M.B.B.S.F.C.P.S Cardio specialist',
       time:'Mon - Fri 09.00 AM - 20.00 PM',
       patients:'25.5k',
-      price:'LK.1500'
+      price:'LK.1500',
+      experience:'2 years'
     },
   
     {
@@ -20,7 +21,8 @@ const DoctorDetails = [
       qulification:'M.B.B.S.F.C.P.S Optimo specialist',
       time:'Mon - Fri 09.00 AM - 20.00 PM',
       patients:'32.5k',
-      price:'LK.1300'
+      price:'LK.1300',
+      experience:'2 years'
       },
 
     {
@@ -32,7 +34,8 @@ const DoctorDetails = [
       qulification:'M.B.B.S.F.C.P.S Dentists specialist',
       time:'Mon - Fri 09.00 AM - 20.00 PM',
       patients:'35.5k',
-      price:'LK.1000'
+      price:'LK.1000',
+      experience:'2 years'
       },
   
     {
@@ -44,7 +47,8 @@ const DoctorDetails = [
       qulification:'M.B.B.S.F.C.P.S ENT specialist',
       time:'Mon - Fri 09.00 AM - 20.00 PM',
       patients:'45.5k',
-      price:'LK.1500'
+      price:'LK.1500',
+      experience:'2 years'
       },
   ];
   
