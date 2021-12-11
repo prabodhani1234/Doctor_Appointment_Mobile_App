@@ -13,12 +13,12 @@ function AllDocorsScreen({navigation}){
                         showsHorizontalScrollIndicator={false}
                         data={DoctorDetails}
                         renderItem={({item})=>
-                            <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('DoctorProfile', item)}>
+                            <TouchableOpacity  activeOpacity={0.8} onPress={() => navigation.navigate('DoctorProfile', item)}>
                             <DoctorsCom 
                             name={item.name} 
                             imageUri={item.imageUri} 
                             catogory={item.Catogory}
-                            year={item.experience}/></TouchableOpacity>}
+                            year={item.experience}/><Text style={styles.buttonContainer}>Book Abbointment</Text></TouchableOpacity>}
                         />
                     
                 </View>    
@@ -36,7 +36,7 @@ const styles=StyleSheet.create(
         buttonContainer:{
             backgroundColor:'#3067F1',  
             position:'absolute', 
-            left:'20%',
+            left:'52%',
             top:'77%',
             borderRadius:5,
             padding:3,
