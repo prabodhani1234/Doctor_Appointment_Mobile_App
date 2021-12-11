@@ -1,28 +1,70 @@
 import React, { Component } from 'react';  
 import { SafeAreaView,Button, Image, StyleSheet, Text, TextInput, View,ScrollView,TouchableOpacity,ImageBackground } from 'react-native';
 import Images from '../theme/Images';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icons from 'react-native-vector-icons/FontAwesome';
 
 const EditProfileScreen= () =>{
         return(
-            <View style={styles.mainContainer}>
-            <TouchableOpacity activeOpacity={0.8} >
-            <View
-              style={styles.imageContainer}>
-              <ImageBackground
-                source={Images.doctor1}
-                style={styles.imageStyle}
-                imageStyle={{borderRadius: 15}}>
-                    <View style={styles.iconContainer}>
-                        <Icon name="camera" size={35} color="#ffffff" style={styles.iconStyles}/>
-                    </View>
-              </ImageBackground>
+            <SafeAreaView style={styles.mainContainer}>
+                <View style={styles.container}>
+                    <TouchableOpacity activeOpacity={0.8} >
+                        <View style={styles.imageContainer}>
+                        <ImageBackground source={Images.doctor1} style={styles.imageStyle} imageStyle={{borderRadius: 15}}>
+                                <View style={styles.iconContainer}>
+                                    <Icon name="camera" size={35} color="#ffffff" style={styles.iconStyles}/>
+                                </View>
+                        </ImageBackground>
+                        </View>
+                    </TouchableOpacity>
+                <Text style={styles.nameText}>
+                    Johne
+                </Text>
             </View>
-          </TouchableOpacity>
-          <Text style={styles.nameText}>
-            Johne
-          </Text>
-        </View>
+            <View style={styles.inputContainer}>
+                <View style={styles.inputItem}>
+                <Icons name="user" size={27} style={{paddingRight:9}} />
+                <TextInput
+                    placeholder="Name"
+                    autoCorrect={false}
+                    style={styles.inputItemText}
+                />
+                </View>
+                <View style={styles.inputItem}>
+                <Icon name="map-marker-alt" size={27} style={{paddingRight:9}} />
+                <TextInput
+                    placeholder="Location"
+                    autoCorrect={false}
+                    style={styles.inputItemText}
+                />
+                </View>
+                <View style={styles.inputItem}>
+                <Icons name="envelope-open" size={27} style={{paddingRight:2}} />
+                <TextInput
+                    placeholder="E-mail Address"
+                    autoCorrect={false}
+                    style={styles.inputItemText}
+                />
+                </View>
+                <View style={styles.inputItem}>
+                <Icon name="phone" size={27} style={{paddingRight:1}}/>
+                <TextInput
+                    placeholder="Phone Number"
+                    autoCorrect={false}
+                    style={styles.inputItemText}
+                />
+                </View>
+                <View style={styles.inputItem}>
+                <Icon name="unlock-alt" size={27} style={{paddingRight:3}} />
+                <TextInput
+                    placeholder="Password"
+                    autoCorrect={false}
+                    style={styles.inputItemText}
+                />
+                </View>
+            </View>
+        </SafeAreaView>
+        
           
         )
     
@@ -32,7 +74,10 @@ const styles= StyleSheet.create(
         mainContainer:{
             flex:1,
             backgroundColor:'#ffffff',
+        },
+        container:{
             alignItems:'center',
+            justifyContent:'center'
         },
         imageContainer:{
             height: 100,
@@ -58,6 +103,28 @@ const styles= StyleSheet.create(
         },
         iconStyles:{
             opacity:0.7,
+        },
+        inputContainer:{
+            marginTop:'6%',
+            marginLeft:'10%'
+        },
+        
+        inputItem: {
+            flexDirection: 'row',
+            paddingVertical: 8,
+            borderBottomWidth: 1,
+            borderBottomColor: '#f2f2f2',
+           
+        },
+        inputItemText: {
+            color: '#777777',
+            marginLeft: 20,
+            fontWeight: '600',
+            fontSize: 16,
+            lineHeight: 26,
+        },
+        saveButtonContainer:{
+            backgroundColor:'#3067F1',
         }
     }
 )
