@@ -24,7 +24,7 @@ const DoctorProfileScreen = ({navigation, route}) => {
                         <TouchableOpacity style={styles.image2Container} activeOpacity={0.8}>
                             <Icon name='envelope' size={33} style={styles.imageColor}/>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8}>
+                        <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} onPress={() => navigation.navigate('AppointmentBookScreen')}>
                             <Text style={styles.buttonText}>Book Appointment</Text>
                         </TouchableOpacity>
 
