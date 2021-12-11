@@ -1,7 +1,7 @@
 import React, { Component } from 'react';  
 import { SafeAreaView,Button, Image, StyleSheet, Text, TextInput, View,ScrollView,TouchableOpacity,ImageBackground } from 'react-native';
 import Images from '../theme/Images';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const EditProfileScreen= () =>{
         return(
@@ -13,6 +13,9 @@ const EditProfileScreen= () =>{
                 source={Images.doctor1}
                 style={styles.imageStyle}
                 imageStyle={{borderRadius: 15}}>
+                    <View style={styles.iconContainer}>
+                        <Icon name="camera" size={35} color="#ffffff" style={styles.iconStyles}/>
+                    </View>
               </ImageBackground>
             </View>
           </TouchableOpacity>
@@ -47,6 +50,14 @@ const styles= StyleSheet.create(
             marginTop: 30, 
             fontSize: 18, 
             fontWeight: 'bold',
+        },
+        iconContainer:{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        iconStyles:{
+            opacity:0.7,
         }
     }
 )
