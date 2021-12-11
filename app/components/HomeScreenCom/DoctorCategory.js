@@ -6,6 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 import {Card} from 'react-native-shadow-cards';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class DoctorCategory extends Component{
   render(){
@@ -23,6 +24,13 @@ class DoctorCategory extends Component{
                 <Text style={styles.catText}>{this.props.Catogory}</Text>
                 <Text style={{fontSize:12}}>Reating</Text>
               </View>
+              <View style={styles.starStylesContainer}>
+                    <Icon name='star' size={15} style={styles.starStyles} />
+                    <Icon name='star' size={15} style={styles.starStyles}  />
+                    <Icon name='star' size={15} style={styles.starStyles} />
+                    <Icon name='star' size={15} style={styles.starStyles} />
+                    <Icon name='star' size={15} style={styles.starStyles} />
+                </View>
                 
           </View>
          
@@ -73,7 +81,13 @@ const styles = StyleSheet.create(
         fontFamily:'Roboto-Black',
         color:'black', 
         paddingTop:10
-      }
+      },
+      starStylesContainer:{
+        flexDirection:'row',
+    },
+    starStyles:{
+        color:'#EFE12B'
+    },
     }
   )
 export default DoctorCategory;
