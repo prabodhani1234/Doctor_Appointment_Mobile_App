@@ -33,7 +33,7 @@ const EditProfileScreen= () =>{
                 <View style={styles.inputItem}>
                 <Icon name="map-marker-alt" size={27} style={{paddingRight:9}} />
                 <TextInput
-                    placeholder="Location"
+                    placeholder="Address"
                     autoCorrect={false}
                     style={styles.inputItemText}
                 />
@@ -61,7 +61,12 @@ const EditProfileScreen= () =>{
                     autoCorrect={false}
                     style={styles.inputItemText}
                 />
-                </View>
+                </View> 
+            </View>
+            <View style={{alignItems:'center'}}>
+                <TouchableOpacity style={styles.saveButtonContainer} activeOpacity={0.8}>
+                    <Text style={styles.saveButtonText}>Save</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
         
@@ -125,7 +130,18 @@ const styles= StyleSheet.create(
         },
         saveButtonContainer:{
             backgroundColor:'#3067F1',
-        }
+            marginTop:20,
+            width:'75%', 
+            height:45,
+            borderRadius:40,
+            alignItems:'center',
+            justifyContent:'center'
+        },
+        saveButtonText:{
+            color:'#ffffff', 
+            fontFamily:'Roboto-Bold', 
+            fontSize:21, 
+        },
     }
 )
 export default EditProfileScreen;
