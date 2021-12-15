@@ -1,6 +1,7 @@
 import React, {useContext, useState} from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
 import Images from '../theme/Images';
+import LinearGradient from 'react-native-linear-gradient';
 import {Card} from 'react-native-shadow-cards';
 import { AuthContext } from '../navigation/AuthProvider';
 
@@ -10,12 +11,7 @@ const LoginScreen = ({navigation}) => {
 
   const {login} = useContext(AuthContext);
     return(
-      <SafeAreaView >
-        <View>
-          <View>
-            <Image style={{width:'100%'}} source={Images.login} />
-          </View>
-          <View style={styles.ImageView}/>
+      <LinearGradient colors={['#3067F1', '#012454']} style={styles.MainContainer}>
           <View style={styles.container}>
             <Text style={styles.mainText}>Login</Text>
             <Card style={styles.inputContainer}>
@@ -29,7 +25,7 @@ const LoginScreen = ({navigation}) => {
                 style={styles.inputText}
               />
             </Card>
-            <Card style={{marginLeft:20, marginTop:20}}>
+            <Card style={styles.inputContainer}>
               <TextInput
                 Value={password}
                 onChangeText={(userPassword) => setPassword(userPassword)}
@@ -46,10 +42,12 @@ const LoginScreen = ({navigation}) => {
             </TouchableOpacity>
 
             <View style={{marginTop:"5%"}}>
-              <Text style={{left:55}}>Don't have an account ? </Text>
-               <TouchableOpacity style={styles.signUpText} activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')} >
-                 <Text style={{color:'#3067F1'}}>Create Account</Text>
-               </TouchableOpacity>
+              <View style={styles.signUpText}>
+                <Text style={{marginLeft:'8%'}}>Don't have an account ? </Text>
+                <TouchableOpacity style={styles.signUpText} activeOpacity={0.7} onPress={() => navigation.navigate('SignUp')} >
+                  <Text style={{color:'#3067F1'}}>Create Account</Text>
+                </TouchableOpacity>
+               </View>
                <Text style={{textAlign:'center'}}>or login with</Text>
 
                <TouchableOpacity style={{margin:25}} activeOpacity={0.7} >
@@ -62,8 +60,7 @@ const LoginScreen = ({navigation}) => {
 
             </View>
           </View>
-        </View>
-      </SafeAreaView>
+          </LinearGradient>
     );
 };
 
@@ -76,21 +73,12 @@ const styles = StyleSheet.create(
           alignItems: 'center',  
           backgroundColor:'white'
       },
-      ImageView:{
-        width:'100%',
-        height:"100%", 
-        backgroundColor:'#3B68E7', 
-        position:'absolute',
-        opacity:0.5,
-      },
-      container:{
-        width:'100%', 
-        height:"200%", 
+      container:{  
+        width:'85%', 
+        height:520, 
         backgroundColor:'#ffffff', 
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-        position:'absolute',
-        top:'92%',
+        margin:20, 
+        borderRadius:30
       },
       mainText:{
         fontSize:22, 
@@ -103,6 +91,7 @@ const styles = StyleSheet.create(
       inputContainer:{
         marginLeft:"5%", 
         marginTop:"10%",
+        width:'90%'
       },
       inputText:{
         marginLeft:"5%",
@@ -111,7 +100,7 @@ const styles = StyleSheet.create(
       ForgotPasswortext:{
         color:'#3067F1',
         textDecorationLine:'underline',
-         marginLeft:'64%', 
+         marginLeft:'59%', 
          marginTop:"5%"
       },
       loginButton:{
@@ -130,8 +119,7 @@ const styles = StyleSheet.create(
         fontSize:21, 
       },
       signUpText:{
-        position:'absolute', 
-        right:55,
+        flexDirection:'row',
       },
 
   }); 
