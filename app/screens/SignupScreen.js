@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image} from "react-native";
 import Images from '../theme/Images';
+import LinearGradient from 'react-native-linear-gradient';
 import {Card} from 'react-native-shadow-cards';
 import { AuthContext } from '../navigation/AuthProvider';
 
@@ -12,12 +13,8 @@ const SignupScreen = ({navigation}) => {
   const {register} = useContext(AuthContext);
 
     return(
-      <SafeAreaView>
-          <View>
-            <Image style={{width:'100%'}} source={Images.signup} />
-            <View style={styles.ImageView}/>
-          </View>
-          <View style={styles.container}>
+      <LinearGradient colors={['#3067F1', '#012454']} style={styles.MainContainer}>
+      <View style={styles.container}>
             <Text style={styles.mainText}>Create Account</Text>
               <Card style={styles.inputContainer}>
                 <TextInput
@@ -30,7 +27,7 @@ const SignupScreen = ({navigation}) => {
                   style={styles.inputText}
                 />
               </Card>
-              <Card style={{marginLeft:20, marginTop:20}}>
+              <Card style={styles.inputContainer}>
                 <TextInput
                   value={password}
                   onChangeText={(userPassword) => setPassword(userPassword)}
@@ -38,7 +35,7 @@ const SignupScreen = ({navigation}) => {
                   style={styles.inputText}
                 />
               </Card>
-              <Card style={{marginLeft:20, marginTop:20}}>
+              <Card style={styles.inputContainer}>
                 <TextInput
                   value={confirmPassword}
                   onChangeText={(userPassword) => setConfirmPassword(userPassword)}
@@ -50,10 +47,12 @@ const SignupScreen = ({navigation}) => {
                 <Text style={styles.accountButtonText}>Create Account</Text>
               </TouchableOpacity>
               <View style={{marginTop:"5%"}}>
-              <Text style={{left:80}}>Already have a account ? </Text>
-               <TouchableOpacity style={styles.loginText} activeOpacity={0.7} onPress={() => navigation.navigate('Login')}>
+                <View style={styles.loginText}>
+              <Text style={{marginLeft:'18%'}}>Already have a account ? </Text>
+               <TouchableOpacity  activeOpacity={0.7} onPress={() => navigation.navigate('Login')}>
                  <Text style={{color:'#3067F1'}}>Login</Text>
                </TouchableOpacity>
+               </View>
                <Text style={{textAlign:'center'}}>or Sign up with</Text>
 
                <TouchableOpacity style={{margin:25}} activeOpacity={0.7} >
@@ -66,7 +65,7 @@ const SignupScreen = ({navigation}) => {
 
             </View>
             </View>
-      </SafeAreaView>
+          </LinearGradient>
     );
 };
 const styles = StyleSheet.create(  
@@ -77,21 +76,12 @@ const styles = StyleSheet.create(
           justifyContent: 'center',  
           alignItems: 'center',  
       },
-      ImageView:{
-        width:'100%',
-        height:"100%", 
-        backgroundColor:'#3B68E7', 
-        position:'absolute',
-        opacity:0.5,
-      },
       container:{
-        width:'100%', 
-        height:"200%", 
+        width:'85%', 
+        height:520, 
         backgroundColor:'#ffffff', 
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-        position:'absolute',
-        top:'93%',
+        margin:20, 
+        borderRadius:30
       },
       mainText:{
         fontSize:22, 
@@ -104,6 +94,7 @@ const styles = StyleSheet.create(
       inputContainer:{
         marginLeft:"5%", 
         marginTop:"6%",
+        width:'90%'
       },
       inputText:{
         marginLeft:"5%",
@@ -114,7 +105,7 @@ const styles = StyleSheet.create(
         justifyContent:'center', 
         backgroundColor:'#3067F1', 
         marginLeft:"13%",
-        marginTop:'7%', 
+        marginTop:'9%', 
         width:'75%', 
         height:50,
         borderRadius:40,
@@ -125,8 +116,7 @@ const styles = StyleSheet.create(
         fontSize:21, 
       },
       loginText:{
-        position:'absolute', 
-        right:80,
+        flexDirection:'row',
       },
   }
 )
