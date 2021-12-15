@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image } from "react-native";
+import Images from '../theme/Images';
 import LinearGradient from 'react-native-linear-gradient';
 import {Card} from 'react-native-shadow-cards';
 
@@ -14,10 +15,14 @@ export default class ForgotPasswordScreen extends Component {
     return(
       <LinearGradient colors={['#3067F1', '#012454']} style={styles.MainContainer}>
           <View style={styles.container}>
+            <View>
+              <Image source={Images.logo} style={styles.logostyles}/>
+            </View>
             <Text style={styles.mainText}>Forgot Password</Text>
-            <Text style={styles.discribemainText}>Did Someone forget this password</Text>
-            <Text style={styles.firstsubtext}>That's Ok...</Text>
-            <Text style={styles.subtext}>Just enter the email address you've used to register with use and we'll send you a reset link</Text>
+
+              <Text style={styles.discribemainText}>Did Someone forget this password</Text>
+              <Text style={styles.firstsubtext}>That's Ok...</Text>
+              <Text style={styles.subtext}>Just enter the email address you've used to register with use and we'll send you a reset link</Text>
               <Card style={styles.inputContainer}>
                 <TextInput
                   placeholder='E-mail'
@@ -44,10 +49,16 @@ const styles = StyleSheet.create(
       },
       container:{
         width:'85%', 
-        height:520, 
+        height:670, 
         backgroundColor:'#ffffff', 
         margin:20, 
         borderRadius:30
+      },
+      logostyles:{
+        width:120, 
+        height:160, 
+        alignSelf:'center', 
+        marginTop:20
       },
       mainText:{
         fontSize:22, 
@@ -83,7 +94,7 @@ const styles = StyleSheet.create(
       },
       discribemainText:{
         fontFamily:'Roboto-Bold', 
-        fontSize:17.5, 
+        fontSize:16, 
         textAlign:'center',
         marginBottom:5, 
         color:'black',

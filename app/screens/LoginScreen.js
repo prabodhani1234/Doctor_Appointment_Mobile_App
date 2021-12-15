@@ -13,6 +13,9 @@ const LoginScreen = ({navigation}) => {
     return(
       <LinearGradient colors={['#3067F1', '#012454']} style={styles.MainContainer}>
           <View style={styles.container}>
+            <View>
+            <Image source={Images.logo} style={styles.logostyles}/>
+            </View>
             <Text style={styles.mainText}>Login</Text>
             <Card style={styles.inputContainer}>
               <TextInput
@@ -75,10 +78,16 @@ const styles = StyleSheet.create(
       },
       container:{  
         width:'85%', 
-        height:520, 
+        height:670, 
         backgroundColor:'#ffffff', 
         margin:20, 
         borderRadius:30
+      },
+      logostyles:{
+        width:120, 
+        height:160, 
+        alignSelf:'center', 
+        marginTop:20
       },
       mainText:{
         fontSize:22, 

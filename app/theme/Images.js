@@ -1,4 +1,5 @@
 const Images={
+    logo:require('../assets/Images/Suwasetha.png'),
     login: require('../assets/Images/login.png'),
     signup: require('../assets/Images/signup.png'),
     forgotpassword: require('../assets/Images/forgot.png'),
