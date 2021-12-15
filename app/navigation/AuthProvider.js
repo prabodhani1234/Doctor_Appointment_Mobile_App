@@ -17,6 +17,7 @@ export const AuthProvider=({children})=>{
 
                     }catch(e){
                         console.log(e);
+                        alert("worng Email or Passowrd")
                     }
                 },
                 register: async(email, password)=>{
