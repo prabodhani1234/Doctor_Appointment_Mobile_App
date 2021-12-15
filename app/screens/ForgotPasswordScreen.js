@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View ,TouchableOpacity,TextInput, SafeAreaView, Image } from "react-native";
-import Images from '../theme/Images';
+import LinearGradient from 'react-native-linear-gradient';
 import {Card} from 'react-native-shadow-cards';
 
 export default class ForgotPasswordScreen extends Component {
@@ -12,12 +12,7 @@ export default class ForgotPasswordScreen extends Component {
 
   render() {
     return(
-      <SafeAreaView >
-          <View>
-            <Image style={{width:'100%'}} source={Images.forgotpassword} />
-            <View style={styles.ImageView}/>
-          </View>
-          
+      <LinearGradient colors={['#3067F1', '#012454']} style={styles.MainContainer}>
           <View style={styles.container}>
             <Text style={styles.mainText}>Forgot Password</Text>
             <Text style={styles.discribemainText}>Did Someone forget this password</Text>
@@ -32,10 +27,10 @@ export default class ForgotPasswordScreen extends Component {
               </Card>
               
               <TouchableOpacity style={styles.recoveryButton} activeOpacity={0.8}>
-                <Text style={styles.recoveryButtonText}>Create Account</Text>
+                <Text style={styles.recoveryButtonText}>Recovery Password</Text>
               </TouchableOpacity>
-          </View>
-      </SafeAreaView>
+              </View>
+          </LinearGradient>
     );
   }; 
 };
@@ -47,33 +42,25 @@ const styles = StyleSheet.create(
           justifyContent: 'center',  
           alignItems: 'center',  
       },
-      ImageView:{
-        width:'100%',
-        height:"100%", 
-        backgroundColor:'#3B68E7', 
-        position:'absolute',
-        opacity:0.5,
-      },
       container:{
-        width:'100%', 
-        height:"200%", 
+        width:'85%', 
+        height:520, 
         backgroundColor:'#ffffff', 
-        borderTopLeftRadius:30,
-        borderTopRightRadius:30,
-        position:'absolute',
-        top:'93%',
+        margin:20, 
+        borderRadius:30
       },
       mainText:{
         fontSize:22, 
         fontFamily:'Roboto-Bold',
         color:'black',
-        marginLeft:"10%",
+        marginLeft:"7%",
         marginTop:'8%',
 
       },
       inputContainer:{
         marginLeft:"5%", 
         marginTop:"10%",
+        width:'90%'
       },
       inputText:{
         marginLeft:"5%",
@@ -83,9 +70,9 @@ const styles = StyleSheet.create(
         alignItems: 'center',
         justifyContent:'center', 
         backgroundColor:'#3067F1', 
-        marginLeft:"13%",
-        marginTop:'7%', 
-        width:'75%', 
+        marginLeft:"10%",
+        marginTop:'10%', 
+        width:'80%', 
         height:50,
         borderRadius:40,
       },
@@ -107,8 +94,8 @@ const styles = StyleSheet.create(
         marginBottom:5
       },
       subtext:{
-        marginLeft:35, 
-        marginRight:30, 
+        marginLeft:25, 
+        marginRight:25, 
         textAlign:'justify', 
         fontSize:14,
       }
