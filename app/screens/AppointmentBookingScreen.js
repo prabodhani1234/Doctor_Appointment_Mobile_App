@@ -1,6 +1,6 @@
 import React, { Component } from 'react';  
 import { SafeAreaView,Button, StyleSheet, Text, TextInput, View,ScrollView,TouchableOpacity  } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default class Appointment extends Component{
     render(){
@@ -34,9 +34,10 @@ export default class Appointment extends Component{
 
                             <TextInput
                                 placeholder="Select Date"
-                                
                             />
-                            <Icon name='user' size={25} style={{ marginLeft:'55%', marginTop:'4%'}}/>
+                            <TouchableOpacity activeOpacity={0.5}>
+                                <Icon name='calendar-day' size={25} style={{ marginLeft:'71%', marginTop:'4%'}}/>
+                            </TouchableOpacity>
                         </View>
                         
                         <Text style={styles.textStyle}>Time</Text>
@@ -44,9 +45,9 @@ export default class Appointment extends Component{
                             placeholder="Select Time"
                             style={styles.inputStyle}
                         />
-                        <View style={styles.buttonContainer}>
+                        <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>Conform</Text>
-                        </View>
+                        </TouchableOpacity>
                         </ScrollView>
                     </View>
                     
