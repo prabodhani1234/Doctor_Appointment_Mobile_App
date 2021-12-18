@@ -41,7 +41,7 @@ export default class Appointment extends Component{
                         </View>
                         
                         <Text style={styles.textStyle}>Time</Text>
-                        <TextInput
+                        <View
                             placeholder="Select Time"
                             style={styles.inputStyle}
                         />
