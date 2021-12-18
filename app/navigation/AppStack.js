@@ -13,6 +13,7 @@ import AllDoctors from '../screens/AllDoctors';
 import DoctorProfile from '../screens/DoctorProfileScreen';
 import EditProfile from '../screens/EditProfileScreen';
 import AppointmentBookScreen from '../screens/AppointmentBookingScreen';
+import PaymentScreen from '../screens/PaymentScreen';
 
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -95,6 +96,20 @@ const HomeStackScreen=()=>(
       <HomeStack.Screen name="AppointmentBookScreen" component={AppointmentBookScreen}
         options={{
           title: 'Appointment',
+          headerStyle: {
+            backgroundColor: '#3067F1',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize:26,
+          }
+        }}
+      
+      />
+      <HomeStack.Screen name="PaymentScreen" component={PaymentScreen}
+        options={{
+          title: 'Payment',
           headerStyle: {
             backgroundColor: '#3067F1',
           },
