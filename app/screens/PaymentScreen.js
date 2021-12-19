@@ -25,7 +25,33 @@ export default class PaymentScreen extends Component{
                                 </View>
                             </View>
                         </View>
-                        
+                        <View style={{marginTop:'5%'}}>
+                            <Text style={styles.textStyle}>Card Name</Text>
+                            <TextInput
+                                placeholder="Enter card name"
+                                style={styles.inputStyle}
+                            />
+                            <Text style={styles.textStyle}>Card Number</Text>
+                            <TextInput
+                                placeholder="Enter card number"
+                                style={styles.inputStyle}
+                            />
+                            <View style={{flexDirection:'row'}}>
+                                <Text style={styles.textStyle}>Expire Date</Text>
+                                <Text style={{fontSize:16,color:'black', marginLeft:'25%'}}>CVC</Text>
+                            </View>
+                            <View style={{flexDirection:'row'}}>
+                                <TextInput
+                                    placeholder="MM/YY"
+                                    style={styles.expireDateStyle}
+                                />
+                                <TextInput
+                                    placeholder="Enter your name"
+                                    secureTextEntry={true}
+                                    style={styles.CVCstyle}
+                                />
+                            </View>
+                        </View>
                         
                     </ScrollView>
                 </View>
@@ -79,7 +105,7 @@ const styles=StyleSheet.create(
         },
         inputStyle:{
             backgroundColor:'#ffffff',
-            width:'90%', 
+            width:'90%',
             marginTop:'2%', 
             borderColor:'#707070', 
             borderWidth:1, 
@@ -87,5 +113,24 @@ const styles=StyleSheet.create(
             paddingLeft:20,
             flexDirection:'row'
         },
+        expireDateStyle:{
+            backgroundColor:'#ffffff',
+            width:'40%',
+            marginTop:'2%', 
+            borderColor:'#707070', 
+            borderWidth:1, 
+            marginBottom:'2%', 
+            paddingLeft:20,
+        },
+        CVCstyle:{
+            backgroundColor:'#ffffff',
+            width:'40%',
+            marginTop:'2%', 
+            borderColor:'#707070', 
+            borderWidth:1, 
+            marginBottom:'2%', 
+            paddingLeft:20,
+            marginLeft:'10%'
+        }
     }
 )
