@@ -121,7 +121,6 @@ const styles= StyleSheet.create(
         },
         inputContainer:{
             marginTop:'6%',
-            marginLeft:'10%'
         },
         
         inputItem: {
