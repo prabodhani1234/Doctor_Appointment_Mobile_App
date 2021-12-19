@@ -86,7 +86,7 @@ const styles= StyleSheet.create(
             flex:1,
             backgroundColor:'#FCFCFC', 
             paddingLeft:'8%', 
-            marginTop:'10%', 
+            marginTop:'5%', 
             paddingRight:'8%',
             borderTopLeftRadius:20, 
             borderTopRightRadius:20,

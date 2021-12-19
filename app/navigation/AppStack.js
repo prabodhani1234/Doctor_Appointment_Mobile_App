@@ -43,7 +43,19 @@ const ProfileStackScreen=()=>(
       },
     }}
     />
-    <ProfileStack.Screen name='EditProfile' component={EditProfile}/>
+    <ProfileStack.Screen name='EditProfile' component={EditProfile}
+    options={{
+      title: 'Edit Profile',
+      headerStyle: {
+          backgroundColor: '#3067F1',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize:26,
+      }
+      }}
+      />
   </ProfileStack.Navigator>
 )
 
