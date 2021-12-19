@@ -8,6 +8,7 @@ const EditProfileScreen= () =>{
         return(
             <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.container}>
+                    <View style={{alignItems:'center'}}>
                     <TouchableOpacity activeOpacity={0.8} >
                         <View style={styles.imageContainer}>
                         <ImageBackground source={Images.doctor1} style={styles.imageStyle} imageStyle={{borderRadius: 15}}>
@@ -20,7 +21,7 @@ const EditProfileScreen= () =>{
                 <Text style={styles.nameText}>
                     Johne
                 </Text>
-            </View>
+                </View>
             <View style={styles.inputContainer}>
                 <View style={styles.inputItem}>
                 <Icons name="user" size={27} style={{paddingRight:9}} />
@@ -68,6 +69,7 @@ const EditProfileScreen= () =>{
                     <Text style={styles.saveButtonText}>Save</Text>
                 </TouchableOpacity>
             </View>
+            </View>
         </SafeAreaView>
         
           
@@ -77,18 +79,26 @@ const EditProfileScreen= () =>{
 const styles= StyleSheet.create(
     {
         mainContainer:{
-            flex:1,
-            backgroundColor:'#ffffff',
+            flex:1, 
+            backgroundColor:'#3067F1'
         },
         container:{
-            alignItems:'center',
-            justifyContent:'center'
+            flex:1,
+            backgroundColor:'#FCFCFC', 
+            paddingLeft:'8%', 
+            marginTop:'10%', 
+            paddingRight:'8%',
+            borderTopLeftRadius:20, 
+            borderTopRightRadius:20,
+            paddingTop:30,
+            
+            
         },
         imageContainer:{
             height: 100,
             width: 100,
             borderRadius: 15,
-            marginTop:50,
+            marginTop:10,
             justifyContent: 'center',
             alignItems: 'center',
         },
