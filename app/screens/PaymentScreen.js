@@ -55,6 +55,9 @@ export default class PaymentScreen extends Component{
                                     style={styles.CVCstyle}
                                 />
                             </View>
+                            <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} >
+                                <Text style={styles.buttonText}>Payment Now</Text>
+                            </TouchableOpacity>
                         </View>
                         
                     </ScrollView>
@@ -140,6 +143,20 @@ const styles=StyleSheet.create(
         subtextContainer:{
             alignItems:'center',
             marginTop:'5%'
+        },
+        buttonContainer:{
+            alignItems:'center', 
+            backgroundColor:'#3B68E7',
+            marginRight:'20%', 
+            marginLeft:'20%', 
+            marginTop:'4%', 
+            paddingTop:8, 
+            paddingBottom:8,
+            borderRadius:15
+        },
+        buttonText:{
+            color:'#ffffff',
+            fontSize:20
         }
     }
 )
