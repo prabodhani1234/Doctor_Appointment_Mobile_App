@@ -4,6 +4,9 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import Images from '../theme/Images';
 
 export default class PaymentScreen extends Component{
+    onPressButton=()=>{
+        this.props.navigation.navigate('ConformScreen');
+    }
     render(){
         return(
             <SafeAreaView style={styles.mainContainer}>
@@ -55,7 +58,7 @@ export default class PaymentScreen extends Component{
                                     style={styles.CVCstyle}
                                 />
                             </View>
-                            <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} >
+                            <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} onPress={this.onPressButton}>
                                 <Text style={styles.buttonText}>Payment Now</Text>
                             </TouchableOpacity>
                         </View>

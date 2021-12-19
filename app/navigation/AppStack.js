@@ -14,6 +14,7 @@ import DoctorProfile from '../screens/DoctorProfileScreen';
 import EditProfile from '../screens/EditProfileScreen';
 import AppointmentBookScreen from '../screens/AppointmentBookingScreen';
 import PaymentScreen from '../screens/PaymentScreen';
+import ConformScreen from '../screens/ConformScreen';
 
 const Stack=createStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -120,6 +121,11 @@ const HomeStackScreen=()=>(
           }
         }}
       
+      />
+      <HomeStack.Screen name='ConformScreen' component={ConformScreen}
+       options={{
+        title: '',
+        }}
       />
     </HomeStack.Navigator>
   )
