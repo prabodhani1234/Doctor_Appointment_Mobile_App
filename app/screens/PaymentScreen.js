@@ -9,8 +9,8 @@ export default class PaymentScreen extends Component{
             <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.container}>
                     <ScrollView>
-                        <View style={{width:'92%', height:180, backgroundColor:'#3067F1', borderRadius:20}}>
-                            <View style={{marginLeft:'6%'}}>
+                        <View style={{width:'100%', height:180, backgroundColor:'#3067F1', borderRadius:20}}>
+                            <View style={{marginLeft:'6%',}}>
                                 <View style={styles.textContainer}>
                                 <Text style={styles.card1fontstyle}>Credit Card</Text>
                                 <Text style={styles.card2fontstyle}>Central Bank</Text>
@@ -25,6 +25,10 @@ export default class PaymentScreen extends Component{
                                 </View>
                             </View>
                         </View>
+                        <View style={styles.subtextContainer}>
+                            <Text style={{fontFamily:'Roboto-Bold'}}>by adding debit/credit card you agree to the </Text>
+                            <Text style={{color:'#3067F1',fontFamily:'Roboto-Bold'}}>Terms and Conditions</Text>
+                        </View>
                         <View style={{marginTop:'5%'}}>
                             <Text style={styles.textStyle}>Card Name</Text>
                             <TextInput
@@ -38,7 +42,7 @@ export default class PaymentScreen extends Component{
                             />
                             <View style={{flexDirection:'row'}}>
                                 <Text style={styles.textStyle}>Expire Date</Text>
-                                <Text style={{fontSize:16,color:'black', marginLeft:'25%'}}>CVC</Text>
+                                <Text style={{fontSize:16,color:'black', marginLeft:'27%'}}>CVC</Text>
                             </View>
                             <View style={{flexDirection:'row'}}>
                                 <TextInput
@@ -70,6 +74,7 @@ const styles=StyleSheet.create(
             backgroundColor:'#FCFCFC', 
             paddingLeft:'8%', 
             marginTop:'10%', 
+            paddingRight:'8%',
             borderTopLeftRadius:20, 
             borderTopRightRadius:20,
             paddingTop:30
@@ -105,7 +110,7 @@ const styles=StyleSheet.create(
         },
         inputStyle:{
             backgroundColor:'#ffffff',
-            width:'90%',
+            width:'100%',
             marginTop:'2%', 
             borderColor:'#707070', 
             borderWidth:1, 
@@ -115,7 +120,7 @@ const styles=StyleSheet.create(
         },
         expireDateStyle:{
             backgroundColor:'#ffffff',
-            width:'40%',
+            width:'45%',
             marginTop:'2%', 
             borderColor:'#707070', 
             borderWidth:1, 
@@ -124,13 +129,17 @@ const styles=StyleSheet.create(
         },
         CVCstyle:{
             backgroundColor:'#ffffff',
-            width:'40%',
+            width:'45%',
             marginTop:'2%', 
             borderColor:'#707070', 
             borderWidth:1, 
             marginBottom:'2%', 
             paddingLeft:20,
             marginLeft:'10%'
+        },
+        subtextContainer:{
+            alignItems:'center',
+            marginTop:'5%'
         }
     }
 )
