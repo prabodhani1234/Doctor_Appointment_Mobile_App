@@ -19,7 +19,7 @@ export default class PaymentScreen extends Component{
                                 <Text style={styles.card2fontstyle}>Central Bank</Text>
                                 </View>
                                 <View style={styles.textContainer}>
-                                    <Text>Image</Text>
+                                    <Icon name='credit-card' size={30} color={'#E6B414'}/>
                                     <Text style={styles.cardtextStyle}>Sri Lanka</Text>
                                 </View>
                                 <View style={{marginTop:'15%', flexDirection:'row'}}>
