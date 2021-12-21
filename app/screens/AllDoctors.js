@@ -5,10 +5,34 @@ import Images from '../theme/Images';
 import DoctorDetails from '../stores/DoctorDetails';
 
 function AllDocorsScreen({navigation}){
+    const [catergoryIndex, setCategoryIndex] = React.useState(0);
 
+    const categories = ['All', 'Optimo', 'Cardio','Dentist'];
+  
+    const CategoryList = () => {
+      return (
+        <View style={styles.categoryContainer}>
+          {categories.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              activeOpacity={0.8}
+              onPress={() => setCategoryIndex(index)}>
+              <Text
+                style={[
+                  styles.categoryText,
+                  catergoryIndex === index && styles.categoryTextSelected,
+                ]}>
+                {item}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      );
+    };
         return(
             <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.container}>
+                    <CategoryList/>
                     <FlatList 
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
@@ -40,7 +64,6 @@ const styles=StyleSheet.create(
             paddingRight:'8%',
             borderTopLeftRadius:20, 
             borderTopRightRadius:20,
-            paddingTop:50
         },
         buttonContainer:{
             backgroundColor:'#3067F1',  
@@ -56,7 +79,19 @@ const styles=StyleSheet.create(
             textAlign:'center', 
             color:'#ffffff'
         },
-        
+        categoryContainer: {
+            flexDirection: 'row',
+            marginTop: 30,
+            marginBottom: 20,
+            justifyContent: 'space-between',
+          },
+          categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
+          categoryTextSelected: {
+            color: '#3067F1',
+            paddingBottom: 5,
+            borderBottomWidth: 2,
+            borderColor: '#3067F1',
+          },
     }
 );
 export default AllDocorsScreen;
