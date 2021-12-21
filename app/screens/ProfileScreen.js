@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';  
-import { SafeAreaView, StyleSheet, Text, View,ScrollView,Image,TouchableOpacity } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View,ScrollView,Image,TouchableOpacity ,ImageBackground} from 'react-native';
 import Images from '../theme/Images';
 import { AuthContext } from '../navigation/AuthProvider';
 import Icon  from 'react-native-vector-icons/FontAwesome5';
@@ -14,7 +14,7 @@ const Profile=({navigation})=>{
                     <View style={styles.mainContainer}>
                         <View style={styles.imageView}>
                             <View style={styles.imageContainer}>
-                                <Image source={Images.doctor1} style={styles.imageStyle}/>
+                                <ImageBackground source={{uri: 'https://picsum.photos/id/10/200'}} style={styles.imageStyle} imageStyle={{borderRadius: 15}}/>
                             </View>
                             <View style={styles.textContaniner}>
                                 <Text style={styles.nameTextStyle}>Ashraf Hossain</Text>
@@ -81,11 +81,6 @@ const styles=StyleSheet.create(
             marginTop:"40%"
         }, 
         imageContainer:{
-            width:170, 
-            height:170, 
-            borderRadius:170, 
-            borderColor:'#707070',
-            backgroundColor:'#E0E0E0', 
             position:'absolute', 
             left:'28%', 
             top:-100
