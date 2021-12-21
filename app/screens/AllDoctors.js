@@ -7,9 +7,10 @@ import DoctorDetails from '../stores/DoctorDetails';
 function AllDocorsScreen({navigation}){
 
         return(
-            <SafeAreaView style={styles.mainContainer}>  
-                <View>
-                    <FlatList
+            <SafeAreaView style={styles.mainContainer}>
+                <View style={styles.container}>
+                    <FlatList 
+                        showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
                         data={DoctorDetails}
                         renderItem={({item})=>
@@ -27,11 +28,19 @@ function AllDocorsScreen({navigation}){
 };
 const styles=StyleSheet.create(
     {
-        mainContainer:{ 
+        mainContainer:{
+            flex:1, 
+            backgroundColor:'#3067F1'
+        },
+        container:{
             flex:1,
-            backgroundColor:'#F3F3F3',
-            alignItems:'center',
-            justifyContent:'center'
+            backgroundColor:'#FCFCFC', 
+            paddingLeft:'8%', 
+            marginTop:'8%', 
+            paddingRight:'8%',
+            borderTopLeftRadius:20, 
+            borderTopRightRadius:20,
+            paddingTop:50
         },
         buttonContainer:{
             backgroundColor:'#3067F1',  
