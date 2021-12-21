@@ -22,7 +22,7 @@ function HomeScreen({navigation}){
                 <View style={styles.container}>
                     <View style={{flex:1}}>
                         <Text style={styles.CatogoryName}>Carogory</Text>
-                        <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} >
+                        <TouchableOpacity activeOpacity={0.5} style={styles.showAllButtonContainer} onPress={() => navigation.navigate('AllDoctors')} >
                             <Text style={styles.showAllButtonText}>Show All</Text>
                         </TouchableOpacity>
                         <View style={{height:140, marginTop:20}}>
