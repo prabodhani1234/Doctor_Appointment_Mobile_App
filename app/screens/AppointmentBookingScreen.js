@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { SafeAreaView,Button, StyleSheet, Text, TextInput, View,ScrollView,TouchableOpacity  } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export default class Appointment extends Component{
-    onPressButton=()=>{
-        this.props.navigation.navigate('PaymentScreen');
-    }
-    render(){
+const Appointment = ({navigation}) => {
+    
+
         return(
             <SafeAreaView style={styles.mainContainer}>
                
@@ -48,7 +46,7 @@ export default class Appointment extends Component{
                             placeholder="Select Time"
                             style={styles.inputStyle}
                         />
-                        <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} onPress={this.onPressButton}>
+                        <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} onPress={() => navigation.navigate('PaymentScreen')}>
                             <Text style={styles.buttonText}>Conform</Text>
                         </TouchableOpacity>
                         </ScrollView>
@@ -57,7 +55,7 @@ export default class Appointment extends Component{
                 
             </SafeAreaView>
         )
-    }
+    
 }
 const styles=StyleSheet.create(
     {
@@ -104,3 +102,4 @@ const styles=StyleSheet.create(
         }
     }
 )
+export default Appointment;
