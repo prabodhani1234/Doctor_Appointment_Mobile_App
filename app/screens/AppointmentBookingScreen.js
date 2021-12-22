@@ -1,9 +1,21 @@
-import React, { Component } from 'react';  
+import React, { useState } from 'react';  
 import { SafeAreaView,Button, StyleSheet, Text, TextInput, View,ScrollView,TouchableOpacity  } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import DateTimePicker from '@react-native-community/datetimepicker'
 
 const Appointment = ({navigation}) => {
-    
+    const [isPickerShow, setIsPickerShow] = useState(false);
+  const [date, setDate] = useState(new Date(Date.now()))
+  const showPicker = () => {
+    setIsPickerShow(true);
+  };
+
+  const onChange = (event, value) => {
+    setDate(value);
+    if (Platform.OS === 'android') {
+      setIsPickerShow(false);
+    }
+  };
 
         return(
             <SafeAreaView style={styles.mainContainer}>
@@ -33,12 +45,11 @@ const Appointment = ({navigation}) => {
                         <Text style={styles.textStyle}>Date</Text>
                         <View style={styles.inputStyle}>
 
-                            <TextInput
-                                placeholder="Select Date"
-                            />
-                            <TouchableOpacity activeOpacity={0.5}>
-                                <Icon name='calendar-day' size={25} style={{ marginLeft:'71%', marginTop:'4%'}}/>
-                            </TouchableOpacity>
+                            <Text>{date.toUTCString()}</Text>
+                            {!isPickerShow && (
+                            <TouchableOpacity activeOpacity={0.5} onPress={showPicker}>
+                                <Icon name='calendar-day' size={25} style={{marginLeft:'30%', marginBottom:10, marginTop:10}} />
+                            </TouchableOpacity>)}
                         </View>
                         
                         <Text style={styles.textStyle}>Time</Text>
@@ -46,9 +57,20 @@ const Appointment = ({navigation}) => {
                             placeholder="Select Time"
                             style={styles.inputStyle}
                         />
+                        
                         <TouchableOpacity style={styles.buttonContainer} activeOpacity={0.8} onPress={() => navigation.navigate('PaymentScreen')}>
                             <Text style={styles.buttonText}>Conform</Text>
                         </TouchableOpacity>
+                        {isPickerShow && (
+                            <DateTimePicker
+                            value={date}
+                            mode={'date'}
+                            display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+                            is24Hour={true}
+                            onChange={onChange}
+                            style={styles.datePicker}
+                            />
+                        )}
                         </ScrollView>
                     </View>
                     
@@ -99,7 +121,14 @@ const styles=StyleSheet.create(
         buttonText:{
             color:'#ffffff',
             fontSize:20
-        }
+        },
+        datePicker: {
+            width: 320,
+            height: 260,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+          },
     }
 )
 export default Appointment;
