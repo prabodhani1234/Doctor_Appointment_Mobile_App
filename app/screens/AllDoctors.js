@@ -46,7 +46,8 @@ function AllDocorsScreen({navigation}){
                             year={item.experience}/><Text style={styles.buttonContainer}>Book Abbointment</Text></TouchableOpacity>}
                         />
                     
-                </View>    
+                </View>  
+                  
             </SafeAreaView>
         )
 };
