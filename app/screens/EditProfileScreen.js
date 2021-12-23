@@ -6,9 +6,31 @@ import Icons from 'react-native-vector-icons/FontAwesome';
 import ImagePicker from 'react-native-image-crop-picker';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
+import firestore from '@react-native-firebase/firestore';
 
 const EditProfileScreen= () =>{
     const [image, setImage] = useState('https://picsum.photos/id/10/200');
+    const [name, setName]=useState('Ashraf Hossain ')
+    const [address, setAddress]=useState(' Colombo ')
+    const [email, setEmail]=useState('ashaf@gmail.com ')
+    const [phone, setPhone]=useState(' +94778585254')
+    const [password, setPassword]=useState('abcdefgh')
+
+    const postData= async ()=>{
+        try{
+          await firestore().app('data')
+          .add({
+            name,
+            address,
+            email,
+            phone,
+            password,
+            uid:Auth().currentUser.uid
+        })
+      }catch(err){
+        Alert.alert('Samting is wrong')
+      }
+    }
 
     const choosePhotoFromLibrary = () => {
         ImagePicker.openPicker({
@@ -85,6 +107,8 @@ const EditProfileScreen= () =>{
                 <TextInput
                     placeholder="Name"
                     autoCorrect={false}
+                    value={name}
+                    onChangeText={text => setName(text)}
                     style={styles.inputItemText}
                 />
                 </View>
@@ -93,6 +117,8 @@ const EditProfileScreen= () =>{
                 <TextInput
                     placeholder="Address"
                     autoCorrect={false}
+                    value={address}
+                    onChangeText={text => setAddress(text)}
                     style={styles.inputItemText}
                 />
                 </View>
@@ -101,6 +127,8 @@ const EditProfileScreen= () =>{
                 <TextInput
                     placeholder="E-mail Address"
                     autoCorrect={false}
+                    value={email}
+                    onChangeText={text => setEmail(text)}
                     style={styles.inputItemText}
                 />
                 </View>
@@ -109,6 +137,8 @@ const EditProfileScreen= () =>{
                 <TextInput
                     placeholder="Phone Number"
                     autoCorrect={false}
+                    value={phone}
+                    onChangeText={text => setPhone(text)}
                     style={styles.inputItemText}
                 />
                 </View>
@@ -117,12 +147,14 @@ const EditProfileScreen= () =>{
                 <TextInput
                     placeholder="Password"
                     autoCorrect={false}
+                    value={password}
+                    onChangeText={text => setPassword(text)}
                     style={styles.inputItemText}
                 />
                 </View> 
             </View>
             <View style={{alignItems:'center'}}>
-                <TouchableOpacity style={styles.saveButtonContainer} activeOpacity={0.8}>
+                <TouchableOpacity style={styles.saveButtonContainer} activeOpacity={0.8} onPress={postData}>
                     <Text style={styles.saveButtonText}>Save</Text>
                 </TouchableOpacity>
             </View>
