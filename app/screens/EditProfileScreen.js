@@ -76,7 +76,7 @@ const EditProfileScreen= () =>{
                         </View>
                     </TouchableOpacity>
                 <Text style={styles.nameText}>
-                    Johne
+                    Ashraf Hossain
                 </Text>
                 </View>
             <View style={styles.inputContainer}>
